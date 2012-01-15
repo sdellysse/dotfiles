@@ -1,13 +1,20 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-set nocompatible          "dont emulate vi
-let mapleader=" "
+" Tell Vim as early as possible not to try to emulate vi
+set nocompatible
 
+" Make win32-vim look for files in the same places as the regular versions
+if has('win32') || has('win64')
+    set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+endif
+
+" Pathogen is now managed by git too, so tell Vim to load it specifically
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 filetype off
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 syntax on
 filetype plugin indent on
 
+let mapleader=" "
 set background=dark       "make sure vim knows bg is dark
 set showmode              "display current mode
 set showcmd               "display partially typed commands
@@ -26,16 +33,14 @@ set title                 "set the terminal title to the filename
 set scrolloff=9           "start scrolling when hits this many lines from edge
 set showtabline=2         "always show tab bar
 
-set autowrite
-
 colorscheme vividchalk
 
 "calls sudo and asks for password if necessary
 cmap w!! %!sudo tee > /dev/null %
 
-"make vimrc editing easier
-map <Leader>v :tabnew ~/.vimrc<CR>:echo "Editing VIMRC"<CR>
-map <Leader>V :source ~/.vimrc<CR>:echo "Reloaded VIMRC"<CR>
+" Easy out-of-insert-mode bindings
+inoremap jk <ESC>
+inoremap kj <ESC>
 
 " Disable arrow keys:
 inoremap  <Up>     <NOP>
@@ -68,11 +73,8 @@ if has("autocmd")
 
   " Remove trailing whitespace from code files on save
   function! StripTrailingWhitespace()
-    " store current cursor location
     silent exe "normal ma<CR>"
-    " delete the whitespace (e means don't warn if pattern not found)
     %s/\s\+$//e
-    " restore old cursor location
     silent exe "normal `a<CR>"
   endfunction
   autocmd BufWritePre *  call StripTrailingWhitespace()

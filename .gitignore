@@ -11,4 +11,5 @@
 !/.vimrc
 !/.gvimrc
 !/.vim
-/.vim/viminfo
+/.vim/*
+!/.vim/bundle
