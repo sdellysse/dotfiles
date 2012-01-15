@@ -14,3 +14,5 @@
 !/.vim
 /.vim/*
 !/.vim/bundle
+
+!/Software
