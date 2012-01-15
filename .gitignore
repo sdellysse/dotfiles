@@ -1,0 +1,14 @@
+/*
+!/.gitignore
+!/.bash_profile
+!/.profile
+!/.bashrc
+
+!/.ssh
+/.ssh/*
+!/.ssh/config
+
+!/.vimrc
+!/.gvimrc
+!/.vim
+/.vim/viminfo
