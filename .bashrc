@@ -1,9 +1,18 @@
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 
-OS=$(uname -o)
-if [ $OS = 'Cygwin' ]; then
-    HOSTNAME=$(hostname)
+# Determine the OS and Hostname
+RAW_OS=$(uname -s)
+if [[ $RAW_OS =~ 'CYGWIN' ]]; then
+    OS="Windows"
+    LHOSTNAME=$(hostname)
+elif [[ $RAW_OS =~ 'Linux' ]]; then
+    OS="Linux"
+    LHOSTNAME=$(hostname -s)
+fi
+
+# If we're on windows, start up the ssh-agent if not already started
+if [ $OS = 'Windows' ]; then
     export SSH_AUTH_SOCK=/tmp/.ssh-socket
     ssh-add -l >/dev/null 2>&1
     if [ $? = 2 ]; then
@@ -15,7 +24,9 @@ if [ $OS = 'Cygwin' ]; then
         kill $(cat /tmp/.ssh-agent-pid)
     }
 else
-    HOSTNAME=$(hostname -s)
+    function kill-agent {
+        :
+    }
 fi
 
 # When changing directory small typos can be ignored by bash
@@ -49,9 +60,7 @@ RED='\[\e[0;31m\]'
 ROOT_WORDY_PROMPT="${RED}\u${NORMAL} on ${RED}\h${NORMAL} in ${LIGHTBLUE}\w${BRIGHTGREEN} # ${NORMAL} "
 USER_WORDY_PROMPT="${GREEN}\u${NORMAL} on ${GREEN}\h${NORMAL} in ${LIGHTBLUE}\w${BRIGHTGREEN} \$ ${NORMAL}"
 
-USER_ID="$(id -u)"
-ROOT_ID="0"
-if [ $USER_ID = $ROOT_ID ]; then
+if [ "$(id -u)" = "0" ]; then
     export PS1=$(eval "echo \${$(echo ROOT_${SELECTED_PROMPT})}")
 else
     export PS1=$(eval "echo \${$(echo USER_${SELECTED_PROMPT})}")
