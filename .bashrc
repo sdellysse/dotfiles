@@ -1,24 +1,21 @@
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 
-if [ -f "${HOME}/.bashrc.definitions" ]; then
-    source "${HOME}/.bashrc.definitions"
-else
-    OS=linux
-    HOSTNAME=$(hostname -s)
-fi
-
-if [ $OS = 'windows' ]; then
+OS=$(uname -o)
+if [ $OS = 'Cygwin' ]; then
+    HOSTNAME=$(hostname)
     export SSH_AUTH_SOCK=/tmp/.ssh-socket
     ssh-add -l >/dev/null 2>&1
     if [ $? = 2 ]; then
         eval $(ssh-agent -a $SSH_AUTH_SOCK)
         echo $SSH_AGENT_PID > /tmp/.ssh-agent-pid
     fi
-    
+
     function kill-agent {
         kill $(cat /tmp/.ssh-agent-pid)
     }
+else
+    HOSTNAME=$(hostname -s)
 fi
 
 # When changing directory small typos can be ignored by bash
@@ -56,7 +53,7 @@ USER_ID="$(id -u)"
 ROOT_ID="0"
 if [ $USER_ID = $ROOT_ID ]; then
     export PS1=$(eval "echo \${$(echo ROOT_${SELECTED_PROMPT})}")
-else 
+else
     export PS1=$(eval "echo \${$(echo USER_${SELECTED_PROMPT})}")
 fi
 
