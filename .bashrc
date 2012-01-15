@@ -2,12 +2,10 @@
 [[ "$-" != *i* ]] && return
 
 # Determine the OS and Hostname
-RAW_OS=$(uname -s)
-if [[ $RAW_OS =~ 'CYGWIN' ]]; then
-    OS="Windows"
+OS=$(os)
+if [[ OS = 'Windows' ]]; then
     LHOSTNAME=$(hostname)
-elif [[ $RAW_OS =~ 'Linux' ]]; then
-    OS="Linux"
+elif [[ OS = 'Linux' ]]; then
     LHOSTNAME=$(hostname -s)
 fi
 

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+OS=$(uname -s)
+if [[ $OS =~ 'CYGWIN' ]]; then
+    echo "Windows"
+elif [[ $OS =~ 'Linux' ]]; then
+    echo "Linux"
+fi
