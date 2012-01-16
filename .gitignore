@@ -19,5 +19,7 @@
 /.vim/*
 !/.vim/bundle
 
+!/.emacs.d
+
 !/Software
 !/bin

@@ -16,3 +16,6 @@
 [submodule ".vim/bundle/vim-twig"]
 	path = .vim/bundle/vim-twig
 	url = git://github.com/beyondwords/vim-twig.git
+[submodule ".emacs.d/evil"]
+	path = .emacs.d/evil
+	url = git://gitorious.org/evil/evil.git
