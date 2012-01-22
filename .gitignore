@@ -8,6 +8,7 @@
 !/.profile
 !/.bashrc
 !/.minttyrc
+!/.curlrc
 
 !/.ssh
 /.ssh/*
