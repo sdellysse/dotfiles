@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [[ $(os) = 'Windows' ]]; then
+    echo $(hostname)
+else
+    echo $(hostname -s)
+fi
