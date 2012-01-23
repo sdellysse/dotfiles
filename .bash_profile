@@ -15,9 +15,6 @@
 
 # User dependent .bash_profile file
 
-# Load RVM into a shell session *as a function*
-[[ -s "/home/shawn/.rvm/scripts/rvm" ]] && source "/home/shawn/.rvm/scripts/rvm"
-
 # Set PATH so it includes user's private bin if it exists
 if [ -d "${HOME}/bin" ] ; then
   PATH="${HOME}/bin:${PATH}"
@@ -32,3 +29,6 @@ fi
 if [ -f "${HOME}/.bashrc" ] ; then
   source "${HOME}/.bashrc"
 fi
+
+# Load RVM into a shell session *as a function*
+[[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
