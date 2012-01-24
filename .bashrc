@@ -14,7 +14,7 @@ if [ $OS = 'Windows' ]; then
     export SSH_AUTH_SOCK=/tmp/.ssh-socket
     ssh-add -l >/dev/null 2>&1
     if [ $? = 2 ]; then
-        rm /tmp/.ssh-socket
+        rm $SSH_AUTH_SOCK
         eval $(ssh-agent -a $SSH_AUTH_SOCK)
         echo $SSH_AGENT_PID > /tmp/.ssh-agent-pid
     fi
