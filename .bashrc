@@ -3,9 +3,9 @@
 
 # Determine the OS and Hostname
 OS=$(os)
-if [[ OS = 'Windows' ]]; then
+if [[ $OS = 'Windows' ]]; then
     LHOSTNAME=$(hostname)
-elif [[ OS = 'Linux' ]]; then
+elif [[ $OS = 'Linux' ]]; then
     LHOSTNAME=$(hostname -s)
 fi
 
@@ -14,7 +14,7 @@ if [ $OS = 'Windows' ]; then
     export SSH_AUTH_SOCK=/tmp/.ssh-socket
     ssh-add -l >/dev/null 2>&1
     if [ $? = 2 ]; then
-        rm $SSH_AUTH_SOCK
+        rm -f $SSH_AUTH_SOCK
         eval $(ssh-agent -a $SSH_AUTH_SOCK)
         echo $SSH_AGENT_PID > /tmp/.ssh-agent-pid
     fi
@@ -32,11 +32,11 @@ fi
 # for example, cd /vr/lgo/apaache would find /var/log/apache
 shopt -s cdspell
 
-[[ -f "${HOME}/.bash_aliases" ]] && source "${HOME}/.bash_aliases"
-[[ -f /etc/bash_completion    ]] && source /etc/bash_completion
-
 # Make bash append rather than overwrite the history on disk
 shopt -s histappend
+
+[[ -f "${HOME}/.bash_aliases" ]] && source "${HOME}/.bash_aliases"
+[[ -f /etc/bash_completion    ]] && source /etc/bash_completion
 
 #####################################
 ### PS1 Prompt Selection
@@ -55,6 +55,7 @@ LIGHTBLUE='\[\e[1;34m\]'
 NORMAL='\[\e[m\]'
 RED='\[\e[0;31m\]'
 
+# Example:
 # shawn on home-desktop in ~/projects $
 ROOT_WORDY_PROMPT="${RED}\u${NORMAL} on ${RED}\h${NORMAL} in ${LIGHTBLUE}\w${BRIGHTGREEN} # ${NORMAL} "
 USER_WORDY_PROMPT="${GREEN}\u${NORMAL} on ${GREEN}\h${NORMAL} in ${LIGHTBLUE}\w${BRIGHTGREEN} \$ ${NORMAL}"
