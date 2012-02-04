@@ -1,12 +1,7 @@
-;;;(add-to-list 'load-path "~/.emacs.d/evil")
-;;;(require 'evil)
-;;;(evil-mode 1)
+;; Start an Emacs server instance (I think. Check this one out for more details)
+(server-start)
 
-;;;(menu-bar-mode -1) (tool-bar-mode -1) (scroll-bar-mode -1)
-(global-linum-mode 1)
-(setq inhibit-startup-message t
-inhibit-startup-echo-area-message t)
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/"))
 
-;;;(define-key global-map (kbd "RET") 'newline-and-indent)
-
-(set-default-font "Consolas-12.0")
+(require 'my-font)
+(require 'my-defaults)
