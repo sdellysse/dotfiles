@@ -22,7 +22,8 @@
 !/Software
 !/bin
 
-#*#
+\#*\#
 *~
+*.elc
 .*.swp
 .*.swo

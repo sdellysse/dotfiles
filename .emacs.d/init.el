@@ -1,7 +1,16 @@
-;; Start an Emacs server instance (I think. Check this one out for more details)
-(server-start)
+(let ((directories '("key-chord" "evil")))
+  (dolist (directory directories)
+    (add-to-list 'load-path (expand-file-name
+      (concat "~/.emacs.d/packages/" directory "/")
+    ))
+  )
+)
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/"))
-
-(require 'my-font)
-(require 'my-defaults)
+(let ((init-d (expand-file-name "~/.emacs.d/init.d/")))
+  (byte-recompile-directory init-d 0)
+  (let ((files (directory-files init-d t "\\.elc$")))
+    (dolist (file files)
+      (load file)
+    )
+  )
+)

@@ -19,3 +19,9 @@
 [submodule ".emacs.d/evil"]
 	path = .emacs.d/evil
 	url = git://gitorious.org/evil/evil.git
+[submodule ".emacs.d/packages/js2-mode"]
+	path = .emacs.d/packages/js2-mode
+	url = git://github.com/mooz/js2-mode.git
+[submodule ".emacs.d/packages/evil"]
+	path = .emacs.d/packages/evil
+	url = git://gitorious.org/evil/evil.git

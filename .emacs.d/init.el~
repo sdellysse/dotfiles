@@ -1,10 +1,16 @@
-;; Start an Emacs server instance (I think. Check this one out for more details)
-(server-start)
+(let ((directories '("key-chord" "evil")))
+  (dolist (directory directories)
+    (add-to-list 'load-path (expand-file-name
+      (concat "~/.emacs.d/packages/" directory "/")
+    )
+  )
+)
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/"))
-
-;; Make <CR> indent after newline.
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
-(require 'default-font)
-(require 'redefine-defaults)
+(let ((init-d (expand-file-name "~/.emacs.d/init.d/")))
+  (byte-recompile-directory init-d 0)
+  (let ((files (directory-files init-d t "\\.elc$")))
+    (dolist (file files)
+      (load file)
+    )
+  )
+)
