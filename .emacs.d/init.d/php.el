@@ -1,0 +1,2 @@
+(require 'pi-php-mode)
+

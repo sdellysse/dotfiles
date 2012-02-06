@@ -5,3 +5,5 @@
 
 (setq backup-directory-alist
   (list (cons "." (expand-config-file-name "backup-files"))))
+
+(setq custom-file (expand-config-file-name "custom.el"))

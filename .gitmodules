@@ -28,3 +28,6 @@
 [submodule ".emacs.d/packages/color-theme-vibrant-ink"]
 	path = .emacs.d/packages/color-theme-vibrant-ink
 	url = git://github.com/mig/color-theme-vibrant-ink.git
+[submodule ".emacs.d/packages/twittering-mode"]
+	path = .emacs.d/packages/twittering-mode
+	url = git://github.com/hayamiz/twittering-mode.git
