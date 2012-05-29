@@ -16,18 +16,9 @@
 [submodule ".vim/bundle/vim-twig"]
 	path = .vim/bundle/vim-twig
 	url = git://github.com/beyondwords/vim-twig.git
-[submodule ".emacs.d/evil"]
-	path = .emacs.d/evil
-	url = git://gitorious.org/evil/evil.git
-[submodule ".emacs.d/packages/js2-mode"]
-	path = .emacs.d/packages/js2-mode
-	url = git://github.com/mooz/js2-mode.git
 [submodule ".emacs.d/packages/evil"]
 	path = .emacs.d/packages/evil
 	url = git://gitorious.org/evil/evil.git
-[submodule ".emacs.d/packages/color-theme-vibrant-ink"]
-	path = .emacs.d/packages/color-theme-vibrant-ink
-	url = git://github.com/mig/color-theme-vibrant-ink.git
-[submodule ".emacs.d/packages/twittering-mode"]
-	path = .emacs.d/packages/twittering-mode
-	url = git://github.com/hayamiz/twittering-mode.git
+[submodule ".emacs.d/packages/key-chord.el"]
+	path = .emacs.d/packages/key-chord.el
+	url = git@github.com:shawndellysse/key-chord.el.git

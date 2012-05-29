@@ -5,4 +5,8 @@ if [[ $OS =~ 'CYGWIN' ]]; then
     echo "Windows"
 elif [[ $OS =~ 'Linux' ]]; then
     echo "Linux"
+elif [[ $OS =~ 'Darwin' ]]; then
+    echo "OSX"
+else
+    echo "UNKNOWN"
 fi
