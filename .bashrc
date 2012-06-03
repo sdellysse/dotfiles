@@ -66,3 +66,4 @@ else
     export PS1=$(eval "echo \${$(echo USER_${SELECTED_PROMPT})}")
 fi
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

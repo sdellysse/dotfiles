@@ -6,6 +6,7 @@
 !/.bashrc
 !/.minttyrc
 !/.curlrc
+!/.tmux.conf
 
 !/.ssh
 /.ssh/*
@@ -25,7 +26,6 @@
 !/.emacs.d/init.d/*.el
 !/.emacs.d/packages
 
-!/Software
 !/bin
 
 \#*\#
