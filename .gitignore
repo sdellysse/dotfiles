@@ -8,10 +8,6 @@
 !/.curlrc
 !/.tmux.conf
 
-!/.ssh
-/.ssh/*
-!/.ssh/config
-
 !/.vimrc
 !/.gvimrc
 !/.vim
