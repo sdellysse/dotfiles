@@ -6,3 +6,4 @@ Scrollbar=none
 Columns=109
 Rows=45
 CursorType=block
+RightClickAction=paste

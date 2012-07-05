@@ -59,9 +59,9 @@ map <Leader>n :tabnew<CR>
 map <Leader>c :tabclose<CR>
 
 map <Leader>d :NERDTreeToggle<CR>
+map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
-map <C-h> <C-w>h
 map <C-l> <C-w>l
 
 if has("autocmd")
@@ -80,3 +80,5 @@ if has("autocmd")
   autocmd BufWritePre *  call StripTrailingWhitespace()
 
 endif
+
+" experimental neocomplcache setup. will need to fuck with this a bit more

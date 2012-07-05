@@ -1,3 +1,6 @@
+(dolist (mode '(tool-bar-mode scroll-bar-mode))
+  (when (fboundp mode) (funcall mode -1)))
+
 (require 'cl)
 
 (when (not (boundp 'emacs-config-directory))
