@@ -1,0 +1,8 @@
+#!/bin/bash
+
+BRIGHTGREEN='\[\e[1;32m\]'
+GREEN='\[\e[0;32m\]'
+LIGHTBLUE='\[\e[1;34m\]'
+NORMAL='\[\e[m\]'
+RED='\[\e[0;31m\]'
+export PS1="${GREEN}\u${NORMAL} on ${GREEN}\h${NORMAL} in ${LIGHTBLUE}\w${BRIGHTGREEN} \$ ${NORMAL}"

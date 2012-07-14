@@ -1,12 +1,8 @@
 /*
 !/.gitignore
-!/.bash_aliases
-!/.bash_profile
-!/.profile
-!/.bashrc
 !/.minttyrc
-!/.curlrc
 !/.tmux.conf
+!/.profile.d
 
 !/.vimrc
 !/.gvimrc
