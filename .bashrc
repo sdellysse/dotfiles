@@ -1,12 +1,13 @@
 [[ "$-" != *i* ]] && return # If not running interactively, don't do anything
 
 # On windows, make sure the X server is in the startup group
-[[ $(os) = 'Windows'                    ]] && export DISPLAY=:0.0
+[[ $(os) = 'Windows'                                ]] && export DISPLAY=:0.0
 
-[[ -d $HOME/bin                         ]] && export PATH=$PATH:$HOME/bin
-[[ -d $HOME/.rvm/bin                    ]] && export PATH=$PATH:$HOME/.rvm/bin
-[[ -d $HOME/AppData/Roaming/npm         ]] && export PATH=$PATH:$HOME/AppData/Roaming/npm
-[[ -d /cygdrive/c/Program\ Files/nodejs ]] && export PATH=$PATH:/cygdrive/c/Program\ Files/nodejs
+[[ -d $HOME/bin                                     ]] && export PATH=$PATH:$HOME/bin
+[[ -d $HOME/.rvm/bin                                ]] && export PATH=$PATH:$HOME/.rvm/bin
+[[ -d $HOME/AppData/Roaming/npm                     ]] && export PATH=$PATH:$HOME/AppData/Roaming/npm
+[[ -d $HOME/Software/android-sdks/platform-tools    ]] && export PATH=$PATH:$HOME/Software/android-sdks/platform-tools
+[[ -d /cygdrive/c/Program\ Files/nodejs             ]] && export PATH=$PATH:/cygdrive/c/Program\ Files/nodejs
 
 [[ -f $HOME/.bash_aliases               ]] && source $HOME/.bash_aliases
 
