@@ -1,7 +1,11 @@
 #!/bin/bash
 
-[[ -d $HOME/bin                                     ]] && export PATH=$PATH:$HOME/bin
-[[ -d $HOME/.rvm/bin                                ]] && export PATH=$PATH:$HOME/.rvm/bin
-[[ -d $HOME/AppData/Roaming/npm                     ]] && export PATH=$PATH:$HOME/AppData/Roaming/npm
-[[ -d $HOME/Software/android-sdks/platform-tools    ]] && export PATH=$PATH:$HOME/Software/android-sdks/platform-tools
-[[ -d /cygdrive/c/Program\ Files/nodejs             ]] && export PATH=$PATH:/cygdrive/c/Program\ Files/nodejs
+USERPATH=
+[[ -d $HOME/bin                                     ]] && USERPATH=$USERPATH:$HOME/bin
+[[ -d $HOME/opt/bin                                 ]] && USERPATH=$USERPATH:$HOME/opt/bin
+[[ -d $HOME/.rvm/bin                                ]] && USERPATH=$USERPATH:$HOME/.rvm/bin
+[[ -d $HOME/AppData/Roaming/npm                     ]] && USERPATH=$USERPATH:$HOME/AppData/Roaming/npm
+[[ -d $HOME/Software/android-sdks/platform-tools    ]] && USERPATH=$USERPATH:$HOME/Software/android-sdks/platform-tools
+[[ -d /cygdrive/c/Program\ Files/nodejs             ]] && USERPATH=$USERPATH:/cygdrive/c/Program\ Files/nodejs
+
+export PATH=$USERPATH:$PATH
