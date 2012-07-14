@@ -24,6 +24,14 @@
 /tmp/*
 !/tmp/.gitkeep
 
+!/opt
+/opt/*
+!/opt/.gitkeep
+
+!/opt/bin
+/opt/bin/*
+!/opt/bin/.gitkeep
+
 \#*\#
 *~
 *.elc

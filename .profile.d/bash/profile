@@ -2,6 +2,7 @@
 
 DIR=${HOME}/.profile.d/bash
 
+source ${DIR}/variables
 source ${DIR}/path
 source ${DIR}/man
 source ${DIR}/windows

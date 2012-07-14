@@ -2,3 +2,5 @@
 
 shopt -s cdspell    # When changing directory small typos can be ignored by bash
 shopt -s histappend # Make bash append rather than overwrite the history on disk
+
+shopt -s cmdhist
