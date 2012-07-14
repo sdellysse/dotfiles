@@ -20,6 +20,10 @@
 
 !/bin
 
+!/tmp
+/tmp/*
+!/tmp/.gitkeep
+
 \#*\#
 *~
 *.elc
