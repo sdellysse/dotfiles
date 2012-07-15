@@ -6,6 +6,7 @@ source ${DIR}/variables
 source ${DIR}/path
 source ${DIR}/man
 source ${DIR}/windows
+source ${DIR}/rvm
 
 [[ "$-" != *i* ]] && return # The following should only be started when interactive
 source ${DIR}/aliases
