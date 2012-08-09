@@ -1,9 +1,10 @@
 BoldAsFont=no
 Font=Consolas
-FontHeight=11
+FontHeight=12
 Transparency=off
 Scrollbar=none
 Columns=109
 Rows=45
 CursorType=block
 RightClickAction=paste
+BackgroundColour=0,0,0
