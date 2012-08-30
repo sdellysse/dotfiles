@@ -8,5 +8,5 @@ elif [[ $OS =~ 'Linux' ]]; then
 elif [[ $OS =~ 'Darwin' ]]; then
     echo "OSX"
 else
-    echo "UNKNOWN"
+    echo "UNKNOWN:${OS}"
 fi

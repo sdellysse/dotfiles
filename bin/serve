@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+
+var fs = require("fs");
+var http = require("http");
+var path = require("path");
+var url = require("url");
+
+var port, root;
+port = parseInt((process.argv[2] || 80), 10);
+root = process.cwd();
+
+http.createServer(function (request, response) {
+    var filename;
+
+    console.log(request.method.toUpperCase()+" "+request.url);
+
+    filename = path.join(root, url.parse(request.url).pathname);
+    fs.exists(filename, function (exists) {
+        if (!exists) {
+            response.writeHead(404, {
+                "Content-Type": "text/plain",
+            });
+            response.write("404");
+            response.end();
+            return;
+        }
+
+        fs.stat(filename, function (err, stats) {
+            if (stats.isDirectory()) {
+                filename = filename+"/index.html";
+            }
+
+            fs.readFile(filename, "binary", function (err, contents) {
+                if (err) {
+                    response.writeHead(500, {
+                        "Content-Type": "text/plain",
+                    });
+                    response.write(err);
+                    response.end();
+                    return;
+                }
+                response.writeHead(200);
+                response.write(contents, "binary");
+                response.end();
+            });
+        });
+    });
+}).listen(port);
+
+console.log("HTTP server on http://localhost:"+port);
+console.log("C-c to shutdown");

@@ -8,3 +8,6 @@ Rows=45
 CursorType=block
 RightClickAction=paste
 BackgroundColour=0,0,0
+ClipShortcuts=no
+ZoomShortcuts=no
+AltFnShortcuts=no
