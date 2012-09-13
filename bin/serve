@@ -5,9 +5,14 @@ var http = require("http");
 var path = require("path");
 var url = require("url");
 
-var port, root;
+var port, root, writeResponse;
 port = parseInt((process.argv[2] || 80), 10);
 root = process.cwd();
+writeResponse = function (response, text, code, headers) {
+    response.writeHead(code || 200, headers || {});
+    response.write(text);
+    response.end();
+};
 
 http.createServer(function (request, response) {
     var filename;
@@ -17,12 +22,9 @@ http.createServer(function (request, response) {
     filename = path.join(root, url.parse(request.url).pathname);
     fs.exists(filename, function (exists) {
         if (!exists) {
-            response.writeHead(404, {
-                "Content-Type": "text/plain",
+            return writeResponse(response, "404", 404, {
+                "Content-Type": "text/plain"
             });
-            response.write("404");
-            response.end();
-            return;
         }
 
         fs.stat(filename, function (err, stats) {
@@ -32,12 +34,9 @@ http.createServer(function (request, response) {
 
             fs.readFile(filename, "binary", function (err, contents) {
                 if (err) {
-                    response.writeHead(500, {
-                        "Content-Type": "text/plain",
+                    return writeResponse(response, err, 500, {
+                        "Content-Type": "text/plain"
                     });
-                    response.write(err);
-                    response.end();
-                    return;
                 }
                 response.writeHead(200);
                 response.write(contents, "binary");
