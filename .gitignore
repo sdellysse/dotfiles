@@ -10,14 +10,6 @@
 /.vim/*
 !/.vim/bundle
 
-!/.emacs.d
-/.emacs.d/*
-!/.emacs.d/init.el
-!/.emacs.d/init.d
-/.emacs.d/init.d/*
-!/.emacs.d/init.d/*.el
-!/.emacs.d/packages
-
 !/bin
 
 !/tmp

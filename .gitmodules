@@ -16,12 +16,6 @@
 [submodule ".vim/bundle/vim-twig"]
 	path = .vim/bundle/vim-twig
 	url = git://github.com/beyondwords/vim-twig.git
-[submodule ".emacs.d/packages/evil"]
-	path = .emacs.d/packages/evil
-	url = git://gitorious.org/evil/evil.git
-[submodule ".emacs.d/packages/key-chord.el"]
-	path = .emacs.d/packages/key-chord.el
-	url = git@github.com:shawndellysse/key-chord.el.git
 [submodule ".vim/bundle/vimproc"]
 	path = .vim/bundle/vimproc
 	url = git://github.com/Shougo/vimproc.git
