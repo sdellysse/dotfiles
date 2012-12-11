@@ -24,6 +24,10 @@
 /opt/bin/*
 !/opt/bin/.gitkeep
 
+!/.ssh
+/.ssh/*
+!/.ssh/rc
+
 \#*\#
 *~
 *.elc
