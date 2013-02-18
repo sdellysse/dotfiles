@@ -1,0 +1,15 @@
+#!/bin/bash
+
+OUTFILENAME=backup.$(date +%F).tar.gz
+TARCMD=$(echo tar czvf "${HOME}/${OUTFILENAME}")
+WD=/
+
+cd $WD
+$TARCMD \
+    /etc/fstab                  \
+    /usr/local                  \
+    ${HOME}/.putty/id_rsa.ppk   \
+    ${HOME}/.ssh/config         \
+    ${HOME}/projects            \
+    ${HOME}/Documents           \
+
