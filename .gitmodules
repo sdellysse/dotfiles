@@ -16,21 +16,6 @@
 [submodule ".vim/bundle/vim-twig"]
 	path = .vim/bundle/vim-twig
 	url = git://github.com/beyondwords/vim-twig.git
-[submodule ".vim/bundle/vimproc"]
-	path = .vim/bundle/vimproc
-	url = git://github.com/Shougo/vimproc.git
-[submodule ".vim/bundle/vimshell"]
-	path = .vim/bundle/vimshell
-	url = git://github.com/Shougo/vimshell.git
-[submodule ".vim/bundle/unite.vim"]
-	path = .vim/bundle/unite.vim
-	url = git://github.com/Shougo/unite.vim.git
-[submodule ".vim/bundle/vimfiler"]
-	path = .vim/bundle/vimfiler
-	url = git://github.com/Shougo/vimfiler.git
-[submodule ".vim/bundle/neocomplcache"]
-	path = .vim/bundle/neocomplcache
-	url = git://github.com/Shougo/neocomplcache.git
 [submodule ".vim/bundle/vim-scala"]
 	path = .vim/bundle/vim-scala
 	url = https://github.com/derekwyatt/vim-scala.git
