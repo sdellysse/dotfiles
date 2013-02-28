@@ -1,3 +1,4 @@
 #!/bin/bash
 
 export HISTFILE=${HOME}/tmp/bash_history
+export EDITOR=vim

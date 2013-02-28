@@ -4,6 +4,7 @@ set nocompatible
 " Make win32-vim look for files in the same places as the regular versions
 if has('win32') || has('win64')
     set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+    set viminfo+=n$HOME/.vim/info
 endif
 
 " Pathogen is now managed by git too, so tell Vim to load it specifically

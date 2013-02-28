@@ -43,3 +43,6 @@
 [submodule ".vim/bundle/vim-yaml"]
 	path = .vim/bundle/vim-yaml
 	url = git://github.com/avakhov/vim-yaml.git
+[submodule ".vim/bundle/typescript-vim"]
+	path = .vim/bundle/typescript-vim
+	url = git://github.com/leafgarland/typescript-vim.git

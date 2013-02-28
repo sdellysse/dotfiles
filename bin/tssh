@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh "$@" -C -t -- "tmux attach -d || tmux"
