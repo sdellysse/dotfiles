@@ -2,11 +2,14 @@
 
 DIR=${HOME}/.profile.d/bash
 
+source ${DIR}/locale
+
 source ${DIR}/variables
 source ${DIR}/path
 source ${DIR}/man
 source ${DIR}/windows
 source ${DIR}/rvm
+source ${DIR}/rbenv
 
 [[ "$-" != *i* ]] && return # The following should only be started when interactive
 source ${DIR}/aliases
