@@ -82,4 +82,4 @@ if has("autocmd")
 
 endif
 
-" experimental neocomplcache setup. will need to fuck with this a bit more
+au BufNewFile,BufRead *.ejs set filetype=html
