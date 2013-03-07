@@ -2,6 +2,7 @@
 !/.gitignore
 !/.minttyrc
 !/.tmux.conf
+!/.screenrc
 !/.profile.d
 
 !/.vimrc
