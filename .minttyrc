@@ -11,3 +11,4 @@ BackgroundColour=0,0,0
 ClipShortcuts=no
 ZoomShortcuts=no
 AltFnShortcuts=no
+ConfirmExit=no

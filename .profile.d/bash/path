@@ -1,12 +1,13 @@
 #!/bin/bash
 
 USERPATH=
-[[ -d $HOME/bin                             ]] && USERPATH=$USERPATH:$HOME/bin
-[[ -d $HOME/opt/bin                         ]] && USERPATH=$USERPATH:$HOME/opt/bin
-[[ -d $HOME/.rvm/bin                        ]] && USERPATH=$USERPATH:$HOME/.rvm/bin
-[[ -d $HOME/.rbenv/bin                      ]] && USERPATH=$USERPATH:$HOME/.rbenv/bin
-[[ -d $HOME/AppData/Roaming/npm             ]] && USERPATH=$USERPATH:$HOME/AppData/Roaming/npm
-[[ -d $HOME/opt/android-sdk/platform-tools  ]] && USERPATH=$USERPATH:$HOME/opt/android-sdk/platform-tools
-[[ -d /cygdrive/c/Program\ Files/nodejs     ]] && USERPATH=$USERPATH:/cygdrive/c/Program\ Files/nodejs
+[[ -d $HOME/bin                                         ]] && USERPATH=$USERPATH:$HOME/bin
+[[ -d $HOME/opt/bin                                     ]] && USERPATH=$USERPATH:$HOME/opt/bin
+[[ -d $HOME/.rvm/bin                                    ]] && USERPATH=$USERPATH:$HOME/.rvm/bin
+[[ -d $HOME/.rbenv/bin                                  ]] && USERPATH=$USERPATH:$HOME/.rbenv/bin
+[[ -d $HOME/AppData/Roaming/npm                         ]] && USERPATH=$USERPATH:$HOME/AppData/Roaming/npm
+[[ -d $HOME/opt/android-sdk/platform-tools              ]] && USERPATH=$USERPATH:$HOME/opt/android-sdk/platform-tools
+[[ -d /cygdrive/c/Program\ Files/nodejs                 ]] && USERPATH=$USERPATH:/cygdrive/c/Program\ Files/nodejs
+[[ -d /cygdrive/c/Program\ Files/Java/jdk1.7.0_25/bin   ]] && USERPATH=$USERPATH:/cygdrive/c/Program\ Files/Java/jdk1.7.0_25/bin
 
 export PATH=$USERPATH:$PATH
