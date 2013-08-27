@@ -82,6 +82,7 @@ if has("autocmd")
 
   " Enforce 2 space indent for ruby files
   autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
+  autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 endif
 
 au BufNewFile,BufRead *.ejs set filetype=html
