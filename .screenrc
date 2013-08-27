@@ -30,13 +30,17 @@ hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= 
 # change command character from ctrl-a to ctrl-b (emacs users may want this)
 #escape ^Bb
 
-# Hide hardstatus: ctrl-a f
-bind f eval "hardstatus ignore"
-# Show hardstatus: ctrl-a F
-bind F eval "hardstatus alwayslastline"
+# Can't think of when I'd need this
+## Hide hardstatus: ctrl-a f
+#bind f eval "hardstatus ignore"
+## Show hardstatus: ctrl-a F
+#bind F eval "hardstatus alwayslastline"
 
 # Start numbering at 1
 bind c screen 1
 bind 0 select 10
 screen 1
 select 1
+
+# SSH-Agent Forwarding
+setenv SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
