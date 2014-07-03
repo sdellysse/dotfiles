@@ -8,4 +8,8 @@ if [ $(os) = 'Windows' ]; then
     else
         echo "Install ssh-pagent"
     fi
+
+    #if [ -z "$SSH_AUTH_SOCK" -a -x /usr/local/bin/ssh-pageant ]; then
+    #    eval $(/usr/local/bin/ssh-pageant -q)
+    #fi
 fi
