@@ -27,7 +27,7 @@
 
 !/.ssh
 /.ssh/*
-!/.ssh/rc
+!/.ssh/config.dist
 
 \#*\#
 *~

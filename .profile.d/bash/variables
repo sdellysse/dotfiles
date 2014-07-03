@@ -2,3 +2,4 @@
 
 export HISTFILE=${HOME}/tmp/bash_history
 export EDITOR=vim
+export GIT_PAGER="vim -"
