@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+
+$filename = $argv[1];
+$content = file_get_contents($filename);
+
+$lines = explode("\n", $content);
+$variables = array();
+
+foreach ($lines as $iL => $line) {
+    if (in_array($iL, array(0, 1))) {
+        continue;
+    }
+
+    $pattern = '/^([a-zA-Z_$][0-9a-zA-Z_$]*) =/';
+    if (preg_match($pattern, $line, $matches)) {
+        $variable = $matches[1];
+
+        $variables []= $variable;
+    }
+}
+
+$lines[1] = "var ".implode(", ", $variables).";";
+$content = implode("\n", $lines);
+
+file_put_contents($filename, $content);
