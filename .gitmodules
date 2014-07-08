@@ -37,9 +37,7 @@
 [submodule ".vim/bundle/mango.vim"]
 	path = .vim/bundle/mango.vim
 	url = https://github.com/goatslacker/mango.vim.git
-[submodule ".vim/bundle/VimClojure"]
-	path = .vim/bundle/VimClojure
-	url = https://github.com/vim-scripts/VimClojure.git
 [submodule ".vim/bundle/scss-syntax.vim"]
 	path = .vim/bundle/scss-syntax.vim
 	url = https://github.com/cakebaker/scss-syntax.vim.git
+
