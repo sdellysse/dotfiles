@@ -29,6 +29,10 @@
 /.ssh/*
 !/.ssh/config.dist
 
+!/src
+/src/*
+!/src/.gitkeep
+
 \#*\#
 *~
 *.elc
