@@ -9,3 +9,4 @@ alias l="ls -l"
 alias la="l -a"
 alias u='cd ..'
 alias s='screen -RD'
+alias ss='python -m SimpleHTTPServer 3000'
