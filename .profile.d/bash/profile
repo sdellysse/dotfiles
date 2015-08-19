@@ -1,11 +1,9 @@
 #!/bin/bash
 
 DIR=${HOME}/.profile.d/bash
-
-source ${DIR}/locale
-
-source ${DIR}/variables
 source ${DIR}/path
+source ${DIR}/locale
+source ${DIR}/env
 source ${DIR}/man
 source ${DIR}/windows
 source ${DIR}/rvm
