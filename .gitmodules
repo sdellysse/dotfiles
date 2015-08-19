@@ -17,3 +17,9 @@
 	path = .vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
 
+[submodule ".vim/bundle/clojure-static"]
+	path = .vim/bundle/clojure-static
+	url = https://github.com/guns/vim-clojure-static.git
+[submodule ".vim/bundle/fireplace"]
+	path = .vim/bundle/fireplace
+	url = https://github.com/tpope/vim-fireplace.git
