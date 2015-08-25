@@ -4,7 +4,7 @@ DIR=${HOME}/.profile.d/bash
 source ${DIR}/path
 source ${DIR}/locale
 source ${DIR}/env
-source ${DIR}/variables
+source ${DIR}/options
 source ${DIR}/man
 source ${DIR}/windows
 source ${DIR}/rvm
