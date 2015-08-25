@@ -11,3 +11,5 @@ USERPATH=
 [[ -d /cygdrive/c/Program\ Files/Java/jdk1.7.0_25/bin   ]] && USERPATH=$USERPATH:/cygdrive/c/Program\ Files/Java/jdk1.7.0_25/bin
 
 export PATH=$USERPATH:$PATH
+
+[[ -f $HOME/.path.local ]] && source $HOME/.path.local

@@ -1,4 +1,6 @@
 #!/bin/bash
 
-export LC_ALL=en_US.utf-8
-export LANG="$LC_ALL"
+if [ $(os) != 'Solaris' ]; then
+    export LC_ALL=en_US.utf-8
+    export LANG="$LC_ALL"
+fi
