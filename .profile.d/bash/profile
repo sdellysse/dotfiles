@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir -p ${HOME}/opt/.profile.d/bash
 
 DIR=${HOME}/.profile.d/bash
 source ${DIR}/path

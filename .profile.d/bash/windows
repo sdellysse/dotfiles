@@ -9,3 +9,5 @@ if [ $(os) = 'Windows' ]; then
         echo "Install ssh-pagent"
     fi
 fi
+
+touch $HOME/opt/.profile.d/bash/windows && source $HOME/opt/.profile.d/bash/windows

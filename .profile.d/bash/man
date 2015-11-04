@@ -1,0 +1,3 @@
+#!/bin/bash
+
+touch $HOME/opt/.profile.d/bash/man && source $HOME/opt/.profile.d/bash/man

@@ -4,3 +4,4 @@ if [ $(os) != 'Solaris' ]; then
     export LC_ALL=en_US.utf-8
     export LANG="$LC_ALL"
 fi
+touch $HOME/opt/.profile.d/bash/locale && source $HOME/opt/.profile.d/bash/locale

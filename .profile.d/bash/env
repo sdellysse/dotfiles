@@ -6,3 +6,5 @@ export EDITOR=vim
 if [ $(os) != 'OSX' ]; then
     export GIT_PAGER="vim -"
 fi
+
+touch $HOME/opt/.profile.d/bash/env && source $HOME/opt/.profile.d/bash/env
