@@ -12,11 +12,15 @@
 /.vim/*
 !/.vim/bundle
 
+!/.ssh
+/.ssh/*
+!/.ssh/config.dist
+
 !/bin
 
-!/tmp
-/tmp/*
-!/tmp/.gitkeep
+!/docs
+/docs/*
+!/docs/.gitkeep
 
 !/opt
 /opt/*
@@ -26,13 +30,13 @@
 /opt/bin/*
 !/opt/bin/.gitkeep
 
-!/.ssh
-/.ssh/*
-!/.ssh/config.dist
-
 !/src
 /src/*
 !/src/.gitkeep
+
+!/tmp
+/tmp/*
+!/tmp/.gitkeep
 
 \#*\#
 *~
