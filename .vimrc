@@ -91,3 +91,4 @@ au BufNewFile,BufRead *.cljs set filetype=clojure
 
 let g:NERDTreeDirArrows=0
 set encoding=utf-8
+set colorcolumn=80
