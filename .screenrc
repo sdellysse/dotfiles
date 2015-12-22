@@ -18,7 +18,7 @@ termcapinfo xterm|xterms|xs|rxvt ti@:te@
 defbce "on"
 
 # Enable 256 color term
-term xterm-256color
+term xterm
 
 # Cache 30000 lines for scroll back
 defscrollback 30000
@@ -27,20 +27,10 @@ hardstatus alwayslastline
 # Very nice tabbed colored hardstatus line
 hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%Y-%m-%d %{= Kc} %C%A%{-}'
 
-# change command character from ctrl-a to ctrl-b (emacs users may want this)
-#escape ^Bb
-
-# Can't think of when I'd need this
-## Hide hardstatus: ctrl-a f
-#bind f eval "hardstatus ignore"
-## Show hardstatus: ctrl-a F
-#bind F eval "hardstatus alwayslastline"
-
 # Start numbering at 1
 bind c screen 1
 bind 0 select 10
 screen 1
 select 1
 
-# SSH-Agent Forwarding
-setenv SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
+utf8 on on
