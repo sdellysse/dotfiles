@@ -13,5 +13,6 @@ source ${DIR}/rbenv
 
 [[ "$-" != *i* ]] && return # The following should only be started when interactive
 source ${DIR}/aliases
+source ${DIR}/functions
 source ${DIR}/options
 source ${DIR}/prompt
