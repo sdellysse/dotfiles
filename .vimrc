@@ -89,6 +89,6 @@ endif
 au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.cljs set filetype=clojure
 
-set encoding=utf-8
 let g:NERDTreeDirArrows=0
+set encoding=utf-8
 set colorcolumn=80
