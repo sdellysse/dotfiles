@@ -7,12 +7,7 @@ else
 fi
 alias l="ls -l"
 alias la="l -a"
-alias ..='cd ..'
 alias s='screen -RD'
-alias ss='python -m SimpleHTTPServer 3000'
-
-function npmi () {
-    npm install --save "$@" && npm shrinkwrap
-}
+alias -- -='cd -'
 
 touch $HOME/opt/.profile.d/bash/aliases && source $HOME/opt/.profile.d/bash/aliases

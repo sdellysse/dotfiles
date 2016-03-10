@@ -23,3 +23,6 @@
 [submodule ".vim/bundle/fireplace"]
 	path = .vim/bundle/fireplace
 	url = https://github.com/tpope/vim-fireplace.git
+[submodule ".emacs.d"]
+	path = .emacs.d
+	url = git@github.com:shawndellysse/spacemacs.git
