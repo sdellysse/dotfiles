@@ -3,8 +3,8 @@
 if [ $(os) = 'Windows' ]; then
     export DISPLAY=:0.0
 
-    if [ -x /usr/local/bin/ssh-pageant ]; then
-        eval $(/usr/local/bin/ssh-pageant -qra /tmp/.ssh-pageant)
+    if [ -x /usr/bin/ssh-pageant ]; then
+        eval $(/usr/bin/ssh-pageant -qra /tmp/.ssh-pageant)
     else
         echo "Install ssh-pagent"
     fi
