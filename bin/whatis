@@ -2,6 +2,7 @@
 
 if [ "$1" = "love" ]; then
     echo "baby don't hurt me"
+    echo "don't hurt me"
     (
         sleep 2
         echo "no more"
