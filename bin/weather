@@ -1,0 +1,5 @@
+#!/bin/bash
+
+CITY="$1"
+
+curl "http://wttr.in/$CITY"

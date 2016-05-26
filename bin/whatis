@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ "$1" = "love" ]; then
+    echo "baby don't hurt me"
+    (
+        sleep 2
+        echo "no more"
+    )&
+    exit
+fi
+
+/usr/bin/whatis "$*"
