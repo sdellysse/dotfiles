@@ -10,7 +10,6 @@ source ${DIR}/man
 source ${DIR}/windows
 source ${DIR}/rvm
 source ${DIR}/rbenv
-source ${DIR}/nix
 
 [[ "$-" != *i* ]] && return # The following should only be started when interactive
 source ${DIR}/aliases
