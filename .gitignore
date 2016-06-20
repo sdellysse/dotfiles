@@ -1,5 +1,6 @@
 /*
 !/.bashrc
+!/.editorconfig
 !/.gitignore
 !/.minttyrc
 !/.tmux.conf
@@ -8,9 +9,6 @@
 
 !/.vimrc
 !/.gvimrc
-!/.vim
-/.vim/*
-!/.vim/bundle
 
 !/.ssh
 /.ssh/*
