@@ -1,4 +1,4 @@
-#!/bin/bash
+# vim: ft=sh
 
 if [ $(os) = 'Windows' ]; then
     export DISPLAY=:0.0

@@ -1,4 +1,4 @@
-#!/bin/bash
+# vim: ft=sh
 
 mkcd () {
     local DIRECTORY="$1"; shift

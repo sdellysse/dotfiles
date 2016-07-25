@@ -1,0 +1,14 @@
+# vim: filetype=sh
+
+__DIR__="${BASH_SOURCE%/*}"
+
+mkdir -p "$HOME/opt/.profile.d/bash"
+
+source "$__DIR__/bash/path"
+source "$__DIR__/bash/locale"
+source "$__DIR__/bash/env"
+source "$__DIR__/bash/options"
+source "$__DIR__/bash/man"
+source "$__DIR__/bash/windows"
+source "$__DIR__/bash/rvm"
+source "$__DIR__/bash/rbenv"

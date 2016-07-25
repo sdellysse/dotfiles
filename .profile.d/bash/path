@@ -1,4 +1,4 @@
-#!/bin/bash
+# vim: ft=sh
 
 USERPATH=
 [[ -d $HOME/bin              ]] && USERPATH=$USERPATH:$HOME/bin
