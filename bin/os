@@ -1,14 +1,15 @@
 #!/bin/sh
 
-OS=$(uname -s)
-if [[ $OS =~ 'CYGWIN' ]]; then
-    echo "Windows"
-elif [[ $OS =~ 'Linux' ]]; then
-    echo "Linux"
-elif [[ $OS =~ 'Darwin' ]]; then
+UNAME_S=$(uname -s)
+
+if echo "$UNAME_S" | grep -q 'Darwin'; then
     echo "OSX"
-elif [[ $OS =~ 'SunOS' ]]; then
+elif echo "$UNAME_S" | grep -q "Linux"; then
+    echo "Linux"
+elif echo "$UNAME_S" | grep -q 'SunUNAME_S'; then
     echo "Solaris"
+elif echo "$UNAME_S" | grep -q 'CYGWIN'; then
+    echo "Windows"
 else
-    echo "UNKNOWN:${OS}"
+    echo "UNKNOWN:${UNAME_S}"
 fi
