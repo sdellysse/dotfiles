@@ -20,10 +20,8 @@ Plug 'tpope/vim-vividchalk'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'pangloss/vim-javascript'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'jamessan/vim-gnupg'
 call plug#end()
-
-" Don't complain if the colorscheme isn't set
-silent! colorscheme vividchalk
 
 let mapleader=" "
 let g:NERDTreeDirArrows=0
@@ -43,6 +41,9 @@ set title                 "set the terminal title to the filename
 set scrolloff=9           "start scrolling when hits this many lines from edge
 set showtabline=2         "always show tab bar
 set visualbell
+
+" Don't complain if the colorscheme isn't set
+silent! colorscheme vividchalk
 
 "calls sudo and asks for password if necessary
 cmap w!! %!sudo tee > /dev/null %
@@ -66,15 +67,14 @@ map <Leader>c :tabclose<CR>
 
 map <Leader>d :NERDTreeToggle<CR>
 
+" Control+hjkl moves focus to that window
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-if has("autocmd")
-  " When editing a file, always jump to the last cursor position
-  autocmd BufReadPost *
-  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-  \   exe "normal! g'\"" |
-  \ endif
-endif
+" When editing a file, always jump to the last cursor position
+autocmd BufReadPost *
+\ if line("'\"") > 0 && line ("'\"") <= line("$") |
+\   exe "normal! g'\"" |
+\ endif
