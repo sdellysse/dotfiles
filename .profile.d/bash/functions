@@ -6,4 +6,21 @@ mkcd () {
     mkdir -p "$DIRECTORY" && cd "$DIRECTORY"
 }
 
+# http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
+man() {
+    env                            \
+    LESS_TERMCAP_md=$'\e[1;36m'    \
+    LESS_TERMCAP_me=$'\e[0m'       \
+    LESS_TERMCAP_se=$'\e[0m'       \
+    LESS_TERMCAP_so=$'\e[1;40;92m' \
+    LESS_TERMCAP_ue=$'\e[0m'       \
+    LESS_TERMCAP_us=$'\e[1;32m'    \
+    man "$@"
+}
+
+show-git-branches() {
+    git ls-remote 2>1 | grep heads | grep -v 'master$' | awk '{ print $2 }' | awk -F / '{ print $3 }'
+}
+
+
 touch $HOME/opt/.profile.d/bash/env && source $HOME/opt/.profile.d/bash/env

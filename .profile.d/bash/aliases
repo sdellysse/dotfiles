@@ -9,5 +9,6 @@ alias l="ls -l"
 alias la="l -a"
 alias s='screen -RD'
 alias -- -='cd -'
+alias vssh='vagrant ssh'
 
 touch $HOME/opt/.profile.d/bash/aliases && source $HOME/opt/.profile.d/bash/aliases

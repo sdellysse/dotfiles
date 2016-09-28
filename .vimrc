@@ -17,10 +17,22 @@ endif
 " Set up vim plugins
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-vividchalk'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jamessan/vim-gnupg'
+Plug 'derekwyatt/vim-scala'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'sjl/gundo.vim'
+Plug 'matchit.zip'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'Shougo/vimproc', {'do': 'make'}
+"Plug 'Shougo/vimshell'
 call plug#end()
 
 let mapleader=" "
@@ -41,6 +53,7 @@ set title                 "set the terminal title to the filename
 set scrolloff=9           "start scrolling when hits this many lines from edge
 set showtabline=2         "always show tab bar
 set visualbell
+set updatetime=250
 
 " Don't complain if the colorscheme isn't set
 silent! colorscheme vividchalk
@@ -65,13 +78,19 @@ inoremap kj <ESC>
 map <Leader>n :tabnew<CR>
 map <Leader>c :tabclose<CR>
 
-map <Leader>d :NERDTreeToggle<CR>
+map <Leader>d :NERDTreeTabsToggle<CR>
+map <Leader>u :GundoToggle<CR>
 
 " Control+hjkl moves focus to that window
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+let g:gundo_right = 1
+let g:gundo_close_on_revert = 1
+
+let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
