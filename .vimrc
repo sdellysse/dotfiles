@@ -26,7 +26,6 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sjl/gundo.vim'
 Plug 'matchit.zip'
@@ -78,7 +77,7 @@ inoremap kj <ESC>
 map <Leader>n :tabnew<CR>
 map <Leader>c :tabclose<CR>
 
-map <Leader>d :NERDTreeTabsToggle<CR>
+map <Leader>d :NERDTreeToggle<CR>
 map <Leader>u :GundoToggle<CR>
 
 " Control+hjkl moves focus to that window
@@ -89,8 +88,6 @@ map <C-l> <C-w>l
 
 let g:gundo_right = 1
 let g:gundo_close_on_revert = 1
-
-let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
