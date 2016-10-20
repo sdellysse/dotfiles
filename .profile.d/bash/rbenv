@@ -1,5 +1,5 @@
 # vim: ft=sh
 
 if [ -x "${HOME}/.rbenv/bin/rbenv" ]; then
-    eval "$(rbenv init -)"
+    eval "$( rbenv init - )"
 fi

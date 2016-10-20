@@ -1,6 +1,6 @@
 # vim: ft=sh
 
-if [ $(os) != 'OSX' ]; then
+if [ "$( os )" != "OSX" ]; then
     alias ls="/bin/ls --color=always -F"
 else
     alias ls="/bin/ls -GF"
@@ -11,4 +11,4 @@ alias s='screen -RD'
 alias -- -='cd -'
 alias vssh='vagrant ssh'
 
-touch $HOME/opt/.profile.d/bash/aliases && source $HOME/opt/.profile.d/bash/aliases
+touch "$HOME/opt/.profile.d/bash/aliases" && source "$HOME/opt/.profile.d/bash/aliases"

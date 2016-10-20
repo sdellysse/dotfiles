@@ -3,6 +3,7 @@
 __DIR__="${BASH_SOURCE%/*}"
 
 source "$__DIR__/bash.noninteractive"
+
 source "$__DIR__/bash/aliases"
 source "$__DIR__/bash/functions"
 source "$__DIR__/bash/options"

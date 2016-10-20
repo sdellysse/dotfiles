@@ -1,14 +1,14 @@
 # vim: ft=sh
 
-USERPATH=
-[[ -d $HOME/bin              ]] && USERPATH=$USERPATH:$HOME/bin
-[[ -d $HOME/opt/homebrew/bin ]] && USERPATH=$USERPATH:$HOME/opt/homebrew/bin
-[[ -d $HOME/opt/bin          ]] && USERPATH=$USERPATH:$HOME/opt/bin
-[[ -d $HOME/.rvm/bin         ]] && USERPATH=$USERPATH:$HOME/.rvm/bin
-[[ -d $HOME/.rbenv/bin       ]] && USERPATH=$USERPATH:$HOME/.rbenv/bin
+USERPATH=""
+[[ -d "$HOME/bin"              ]] && USERPATH="$USERPATH:$HOME/bin"
+[[ -d "$HOME/opt/homebrew/bin" ]] && USERPATH="$USERPATH:$HOME/opt/homebrew/bin"
+[[ -d "$HOME/opt/bin"          ]] && USERPATH="$USERPATH:$HOME/opt/bin"
+[[ -d "$HOME/.rvm/bin"         ]] && USERPATH="$USERPATH:$HOME/.rvm/bin"
+[[ -d "$HOME/.rbenv/bin"       ]] && USERPATH="$USERPATH:$HOME/.rbenv/bin"
 
 # Remove the initial colon
 USERPATH="$( echo "$USERPATH" | sed 's/^://' )"
 
-export PATH=$USERPATH:$PATH
-touch $HOME/opt/.profile.d/bash/path && source $HOME/opt/.profile.d/bash/path
+export PATH="$USERPATH:$PATH"
+touch "$HOME/opt/.profile.d/bash/path" && source "$HOME/opt/.profile.d/bash/path"

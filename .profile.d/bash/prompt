@@ -9,4 +9,4 @@ export PS1="${GREEN}\u${NORMAL} on ${GREEN}\h${NORMAL} in ${LIGHTBLUE}\w${BRIGHT
 
 export MYSQL_PS1="[\\d]> "
 
-touch $HOME/opt/.profile.d/bash/prompt && source $HOME/opt/.profile.d/bash/prompt
+touch "$HOME/opt/.profile.d/bash/prompt" && source "$HOME/opt/.profile.d/bash/prompt"

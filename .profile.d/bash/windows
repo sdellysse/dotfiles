@@ -1,13 +1,13 @@
 # vim: ft=sh
 
-if [ $(os) = 'Windows' ]; then
+if [ "$( os )" = 'Windows' ]; then
     export DISPLAY=:0.0
 
     if [ -x /usr/bin/ssh-pageant ]; then
-        eval $(/usr/bin/ssh-pageant -qra /tmp/.ssh-pageant)
+        eval $( /usr/bin/ssh-pageant -qra /tmp/.ssh-pageant )
     else
         echo "Install ssh-pagent"
     fi
 fi
 
-touch $HOME/opt/.profile.d/bash/windows && source $HOME/opt/.profile.d/bash/windows
+touch "$HOME/opt/.profile.d/bash/windows" && source "$HOME/opt/.profile.d/bash/windows"
