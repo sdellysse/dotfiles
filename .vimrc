@@ -30,8 +30,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sjl/gundo.vim'
 Plug 'matchit.zip'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'Shougo/vimproc', {'do': 'make'}
-"Plug 'Shougo/vimshell'
+Plug 'elixir-lang/vim-elixir'
 call plug#end()
 
 let mapleader=" "

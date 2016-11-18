@@ -11,5 +11,11 @@ insert_final_newline = true
 [Makefile]
 indent_style = tab
 
-[scala]
+[*.ex]
+indent_size = 2
+
+[*.exs]
+indent_size = 2
+
+[*.scala]
 indent_size = 2
