@@ -5,15 +5,27 @@ khd kwm on
 lalt - j             : ~/opt/homebrew/bin/kwmc window -f next
 lalt - k             : ~/opt/homebrew/bin/kwmc window -f prev
 
+# Switch to Neighbor Space
+lalt - h             : ~/opt/homebrew/bin/kwmc space -fExperimental left
+lalt - l             : ~/opt/homebrew/bin/kwmc space -fExperimental right
+
 # Swap Window With Neighbor
 lalt + lshift - j    : ~/opt/homebrew/bin/kwmc window -s next
 lalt + lshift - k    : ~/opt/homebrew/bin/kwmc window -s prev
 
-# Swap Window With Neighbor
-lalt + lctrl - j     : ~/opt/homebrew/bin/kwmc window -c reduce 0.01 north
-lalt + lctrl - k     : ~/opt/homebrew/bin/kwmc window -c expand 0.01 north
-lalt + lctrl - l     : ~/opt/homebrew/bin/kwmc window -c expand 0.01 east
-lalt + lctrl - h     : ~/opt/homebrew/bin/kwmc window -c reduce 0.01 east
+# Move window to neighbor space
+lalt + lshift - h    : ~/.kwm/move-with.sh left
+lalt + lshift - l    : ~/.kwm/move-with.sh right
+
+# Resize Current Window
+lalt + lctrl  - up    : ~/opt/homebrew/bin/kwmc window -c expand 0.1 north
+lalt + lshift - up    : ~/opt/homebrew/bin/kwmc window -c reduce 0.1 north
+lalt + lctrl  - down  : ~/opt/homebrew/bin/kwmc window -c expand 0.1 south
+lalt + lshift - down  : ~/opt/homebrew/bin/kwmc window -c reduce 0.1 south
+lalt + lctrl  - left  : ~/opt/homebrew/bin/kwmc window -c expand 0.1 west
+lalt + lshift - left  : ~/opt/homebrew/bin/kwmc window -c reduce 0.1 west
+lalt + lctrl  - right : ~/opt/homebrew/bin/kwmc window -c expand 0.1 east
+lalt + lshift - right : ~/opt/homebrew/bin/kwmc window -c reduce 0.1 east
 
 # Set Current Space
 lalt - 1             : ~/opt/homebrew/bin/kwmc space -fExperimental 1
