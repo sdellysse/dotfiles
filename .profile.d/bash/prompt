@@ -1,11 +1,35 @@
 # vim: ft=sh
 
-BRIGHTGREEN='\[\e[1;32m\]'
-GREEN='\[\e[0;32m\]'
-LIGHTBLUE='\[\e[1;34m\]'
-NORMAL='\[\e[m\]'
-RED='\[\e[0;31m\]'
-export PS1="${GREEN}\u${NORMAL} on ${GREEN}\h${NORMAL} in ${LIGHTBLUE}\w${BRIGHTGREEN} \$ ${NORMAL}"
+PROMPT_COLOR_BLUE="\[\e[34;1m\]"
+PROMPT_COLOR_BOLD="\[\033[1m\]"
+PROMPT_COLOR_GREEN="\[\e[32;1m\]"
+PROMPT_COLOR_RED="\[\033[1;31m\]"
+PROMPT_COLOR_RESET="\[\033[m\]"
+PROMPT_COLOR_YELLOW="\[\e[33;1m\]"
+PROMPT_DATE="\D{%Y-%m-%d %I:%M:%S %p %Z}"
+
+function PROMPT_function() {
+    local last_errno="$?"
+
+    local exitstatus=
+    if [ "${last_errno}" -eq 0 ]; then
+      exitstatus="${PROMPT_COLOR_GREEN}:) "
+    else
+      exitstatus="${PROMPT_COLOR_RED}$( printf "%-3s" "${last_errno}" )"
+    fi
+
+    local username=
+    if [ "${UID}" -eq 0 ]; then
+      username="${PROMPT_COLOR_RED}root${PROMPT_COLOR_RESET}"
+    else
+      username="${PROMPT_COLOR_GREEN}${USER}${PROMPT_COLOR_RESET}"
+    fi
+
+    PS1="\n${PROMPT_COLOR_BOLD}${exitstatus}${PROMPT_COLOR_RESET} ${PROMPT_COLOR_BOLD}${PROMPT_COLOR_BLUE}${PROMPT_DATE}${PROMPT_COLOR_RESET} \w\n${username}@${PROMPT_COLOR_YELLOW}\h${PROMPT_COLOR_RESET} \$ "
+    PS2="${PROMPT_COLOR_BOLD}>${PROMPT_COLOR_RESET} "
+}
+
+PROMPT_COMMAND=PROMPT_function
 
 export MYSQL_PS1="[\\d]> "
 

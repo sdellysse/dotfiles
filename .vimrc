@@ -26,7 +26,6 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sjl/gundo.vim'
 Plug 'matchit.zip'
 Plug 'Xuyuanp/nerdtree-git-plugin'
