@@ -8,6 +8,18 @@ PROMPT_COLOR_RESET="\[\033[m\]"
 PROMPT_COLOR_YELLOW="\[\e[33;1m\]"
 PROMPT_DIRECTORY_LENGTH_CUTOFF=16
 
+function PROMPT_in_git_repo() {
+    [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1
+}
+
+function PROMPT_not_home_repo() {
+    [ "$( git rev-parse --show-toplevel 2>&1 )" != "$HOME" ]
+}
+
+function PROMPT_current_git_branch() {
+    git rev-parse --abbrev-ref HEAD
+}
+
 function PROMPT_function() {
     local last_errno="$?"
 
@@ -38,7 +50,12 @@ function PROMPT_function() {
         pwd_str="$dirs_str"
     fi
 
-    PS1="${username}@${PROMPT_COLOR_YELLOW}\h${PROMPT_COLOR_RESET} ${PROMPT_COLOR_BOLD}${exitstatus}${PROMPT_COLOR_RESET} ${PROMPT_COLOR_BLUE}${pwd_str}${PROMPT_COLOR_RESET} \$ "
+    local git_str=
+    if PROMPT_in_git_repo && PROMPT_not_home_repo ; then
+        git_str="${PROMPT_COLOR_GREEN}[$( PROMPT_current_git_branch )]${PROMPT_COLOR_RESET} "
+    fi
+
+    PS1="${username}@${PROMPT_COLOR_YELLOW}\h${PROMPT_COLOR_RESET} ${PROMPT_COLOR_BOLD}${exitstatus}${PROMPT_COLOR_RESET} ${PROMPT_COLOR_BLUE}${pwd_str}${PROMPT_COLOR_RESET} ${git_str}\$ "
     PS2="${PROMPT_COLOR_BOLD}>${PROMPT_COLOR_RESET} "
 }
 
