@@ -11,6 +11,9 @@ insert_final_newline = true
 [Makefile]
 indent_style = tab
 
+[*.erl]
+indent_size = 2
+
 [*.ex]
 indent_size = 2
 

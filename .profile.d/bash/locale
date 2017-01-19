@@ -1,7 +1,6 @@
 # vim: ft=sh
 
 if [ "$( os )" != "Solaris" ]; then
-    export LC_ALL="en_US.utf-8"
-    export LANG="$LC_ALL"
+    export LANG="en_US.utf-8"
 fi
 touch "$HOME/opt/.profile.d/bash/locale" && source "$HOME/opt/.profile.d/bash/locale"
