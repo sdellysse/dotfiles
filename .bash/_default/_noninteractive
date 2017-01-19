@@ -1,0 +1,5 @@
+# vim: filetype=sh
+
+source "${HOME}/.bash/_default/locale"
+source "${HOME}/.bash/_default/path"
+source "${HOME}/.bash/_default/env_noninteractive"

@@ -1,0 +1,3 @@
+# vim: filetype=sh
+
+source "${HOME}/.bash/omnitibook/_interactive"

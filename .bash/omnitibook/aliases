@@ -1,0 +1,5 @@
+# vim: filetype=sh
+source "${HOME}/.bash/_default/aliases"
+
+alias ls="/bin/ls -GF"
+eval "$( thefuck --alias )"

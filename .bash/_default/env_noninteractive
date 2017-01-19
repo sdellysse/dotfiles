@@ -1,0 +1,4 @@
+# vim: ft=sh
+
+export EDITOR="$( which vim )"
+export HISTFILE="${HOME}/tmp/bash_history"

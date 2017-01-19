@@ -1,0 +1,7 @@
+# vim: filetype=sh
+
+export BASH_ENV="${HOME}/.bash/omnitibook/_noninteractive"
+source "${BASH_ENV}"
+
+source "${HOME}/.bash/omnitibook/aliases"
+source "${HOME}/.bash/_default/env_interactive"

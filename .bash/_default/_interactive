@@ -1,0 +1,5 @@
+export BASH_ENV="${HOME}/.bash/_default/_noninteractive"
+source "${BASH_ENV}"
+
+source "${HOME}/.bash/_default/aliases"
+source "${HOME}/.bash/_default/env_interactive"

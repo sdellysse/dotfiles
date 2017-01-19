@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [[ $(os) = 'Windows' ]]; then
-    echo $(hostname)
+if [[ "$( "${HOME}/bin/os" )" = 'windows' ]]; then
+    hostname
 else
-    echo $(hostname -s)
+    hostname -s
 fi

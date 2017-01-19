@@ -1,5 +1,12 @@
 # vim: ft=sh
 
+alias ls="/bin/ls --color=always -F"
+alias l="ls -l"
+alias la="l -a"
+alias s='screen -RD'
+alias -- -='cd -'
+alias vssh='vagrant ssh'
+
 # http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
 man() {
     env                            \
@@ -11,5 +18,3 @@ man() {
     LESS_TERMCAP_us=$'\e[1;32m'    \
     man "$@"
 }
-
-touch "$HOME/opt/.bash/man" && source "$HOME/opt/.bash/man"

@@ -1,0 +1,22 @@
+# vim: filetype=sh
+
+if [ -z "${DOTBASH_config}" ]; then
+    DOTBASH_host="$( "${HOME}/bin/short-hostname" )"
+
+    if [ -d "${HOME}/.bash/${USER}@${DOTBASH_host}" ]; then
+        DOTBASH_config="${USER}@${DOTBASH_host}"
+
+    elif [ -d "${HOME}/.bash/${DOTBASH_host}" ]; then
+        DOTBASH_config="${DOTBASH_host}"
+
+    else
+        DOTBASH_os="$( "${HOME}/bin/os" )"
+
+        if [ -d "${HOME}/.bash/_os_${DOTBASH_os}" ]; then
+            DOTBASH_config="_os_${DOTBASH_os}"
+        else
+            DOTBASH_config="_default"
+        fi
+    fi
+fi
+

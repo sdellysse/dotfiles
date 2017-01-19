@@ -3,13 +3,13 @@
 UNAME_S=$(uname -s)
 
 if echo "$UNAME_S" | grep -q 'Darwin'; then
-    echo "OSX"
+    echo "macos"
 elif echo "$UNAME_S" | grep -q "Linux"; then
-    echo "Linux"
+    echo "linux"
 elif echo "$UNAME_S" | grep -q 'SunUNAME_S'; then
-    echo "Solaris"
+    echo "solaris"
 elif echo "$UNAME_S" | grep -q 'CYGWIN'; then
-    echo "Windows"
+    echo "windows"
 else
     echo "UNKNOWN:${UNAME_S}"
 fi
