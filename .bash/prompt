@@ -63,4 +63,4 @@ PROMPT_COMMAND=PROMPT_function
 
 export MYSQL_PS1="[\\d]> "
 
-touch "$HOME/opt/.profile.d/bash/prompt" && source "$HOME/opt/.profile.d/bash/prompt"
+touch "$HOME/opt/.bash/prompt" && source "$HOME/opt/.bash/prompt"

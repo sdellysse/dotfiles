@@ -11,4 +11,4 @@ alias s='screen -RD'
 alias -- -='cd -'
 alias vssh='vagrant ssh'
 
-touch "$HOME/opt/.profile.d/bash/aliases" && source "$HOME/opt/.profile.d/bash/aliases"
+touch "$HOME/opt/.bash/aliases" && source "$HOME/opt/.bash/aliases"

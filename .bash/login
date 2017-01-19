@@ -2,4 +2,4 @@
 
 __DIR__="${BASH_SOURCE%/*}"
 
-source "$__DIR__/bash.interactive"
+source "$__DIR__/interactive"

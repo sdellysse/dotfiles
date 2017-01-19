@@ -1,7 +1,0 @@
-# vim: ft=sh
-
-export HISTFILE="${HOME}/tmp/bash_history"
-export EDITOR="$( which vim )"
-export BASH_ENV="${HOME}/.profile.d/bash.noninteractive"
-
-touch "$HOME/opt/.profile.d/bash/env" && source "$HOME/opt/.profile.d/bash/env"

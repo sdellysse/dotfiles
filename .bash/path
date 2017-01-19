@@ -11,4 +11,4 @@ USERPATH=""
 USERPATH="$( echo "$USERPATH" | sed 's/^://' )"
 
 export PATH="$USERPATH:$PATH"
-touch "$HOME/opt/.profile.d/bash/path" && source "$HOME/opt/.profile.d/bash/path"
+touch "$HOME/opt/.bash/path" && source "$HOME/opt/.bash/path"

@@ -1,0 +1,12 @@
+# vim: filetype=sh
+
+__DIR__="${BASH_SOURCE%/*}"
+
+mkdir -p "$HOME/opt/.bash"
+
+source "$__DIR__/path"
+source "$__DIR__/locale"
+source "$__DIR__/env"
+source "$__DIR__/options"
+source "$__DIR__/man"
+source "$__DIR__/windows"

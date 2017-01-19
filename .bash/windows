@@ -10,4 +10,4 @@ if [ "$( os )" = 'Windows' ]; then
     fi
 fi
 
-touch "$HOME/opt/.profile.d/bash/windows" && source "$HOME/opt/.profile.d/bash/windows"
+touch "$HOME/opt/.bash/windows" && source "$HOME/opt/.bash/windows"

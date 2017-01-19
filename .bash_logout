@@ -1,1 +1,1 @@
-source "$HOME/.profile.d/bash.logout"
+source "$HOME/.bash/logout"

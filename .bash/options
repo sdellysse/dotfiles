@@ -9,4 +9,4 @@ if ((BASH_VERSINFO[0] >= 4)); then
     shopt -s dirspell   # fix spelling during tab completion
 fi
 
-touch "$HOME/opt/.profile.d/bash/options" && source "$HOME/opt/.profile.d/bash/options"
+touch "$HOME/opt/.bash/options" && source "$HOME/opt/.bash/options"

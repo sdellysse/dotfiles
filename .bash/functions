@@ -11,4 +11,4 @@ show-git-branches() {
 }
 
 
-touch "$HOME/opt/.profile.d/bash/env" && source "$HOME/opt/.profile.d/bash/env"
+touch "$HOME/opt/.bash/env" && source "$HOME/opt/.bash/env"

@@ -12,4 +12,4 @@ man() {
     man "$@"
 }
 
-touch "$HOME/opt/.profile.d/bash/man" && source "$HOME/opt/.profile.d/bash/man"
+touch "$HOME/opt/.bash/man" && source "$HOME/opt/.bash/man"
