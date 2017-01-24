@@ -62,15 +62,17 @@ cmap w!! %!sudo tee > /dev/null %
 inoremap jk <ESC>
 inoremap kj <ESC>
 
-"" Disable arrow keys:
-"inoremap  <Up>     <NOP>
-"inoremap  <Down>   <NOP>
-"inoremap  <Left>   <NOP>
-"inoremap  <Right>  <NOP>
-"noremap   <Up>     <NOP>
-"noremap   <Down>   <NOP>
-"noremap   <Left>   <NOP>
-"noremap   <Right>  <NOP>
+" GVim options
+set guioptions=agit
+
+if has('gui_macvim')
+    set macligatures
+    set guifont=Fira\ Code:h12
+endif
+if has('win32') || has('win64')
+    set guifont=Consolas:h11
+endif
+
 
 map <Leader>n :tabnew<CR>
 map <Leader>c :tabclose<CR>
