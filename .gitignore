@@ -5,7 +5,6 @@
 !/.bashrc
 !/.editorconfig
 !/.gitignore
-!/.khdrc
 !/.minttyrc
 !/.tmux.conf
 !/.screenrc
@@ -13,10 +12,6 @@
 
 !/.vimrc
 !/.gvimrc
-
-!/.kwm
-/.kwm/*
-!/.kwm/kwmrc
 
 !/.ssh
 /.ssh/*
