@@ -16,24 +16,41 @@ endif
 
 " Set up vim plugins
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-vividchalk'
 Plug 'scrooloose/nerdtree'
-Plug 'pangloss/vim-javascript'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'jamessan/vim-gnupg'
-Plug 'derekwyatt/vim-scala'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
-Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'sjl/gundo.vim'
 Plug 'matchit.zip'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'elixir-lang/vim-elixir'
+Plug 'godlygeek/tabular'
+
+" Syntax
+Plug 'pearofducks/ansible-vim'
+Plug 'JulesWang/css.vim',             { 'for': 'css' }
+Plug 'elixir-lang/vim-elixir',        { 'for': 'elixir' }
+Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
+Plug 'fatih/vim-go',                  { 'for': 'go' }
+Plug 'neovimhaskell/haskell-vim',     { 'for': 'haskell' }
+Plug 'pangloss/vim-javascript',       { 'for': 'javascript' }
+Plug 'mxw/vim-jsx',                   { 'for': 'javascript' }
+Plug 'tbastos/vim-lua',               { 'for': 'lua' }
+Plug 'chr4/nginx.vim'
+Plug 'vim-perl/vim-perl',             { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+Plug 'StanAngeloff/php.vim',          { 'for': 'php' }
+Plug 'rust-lang/rust.vim',            { 'for': 'rust' }
+Plug 'derekwyatt/vim-sbt',            { 'for': 'sbt' }
+Plug 'derekwyatt/vim-scala',          { 'for': 'scala' }
+Plug 'stephpy/vim-yaml',              { 'for': 'yaml' }
+
+" Themes
+Plug 'tpope/vim-vividchalk'
+
 call plug#end()
 
 let mapleader=" "
-let g:NERDTreeDirArrows=0
+let g:NERDTreeDirArrows = 0
+let g:jsx_ext_required = 0
 set colorcolumn=81
 set background=dark       "make sure vim knows bg is dark
 set showmode              "display current mode
@@ -51,6 +68,11 @@ set scrolloff=9           "start scrolling when hits this many lines from edge
 set showtabline=2         "always show tab bar
 set visualbell
 set updatetime=250
+
+" Indentation settings, gave up on editorconfig
+set expandtab
+set shiftwidth=2
+set tabstop=2
 
 " Don't complain if the colorscheme isn't set
 silent! colorscheme vividchalk
@@ -73,6 +95,12 @@ if has('win32') || has('win64')
     set guifont=Consolas:h11
 endif
 
+if exists(':tnoremap')
+  " Smash JK in terminal mode to revert to normal mode
+  tnoremap jk <C-\><C-N>
+  tnoremap kj <C-\><C-N>
+endif
+
 
 map <Leader>n :tabnew<CR>
 map <Leader>c :tabclose<CR>
@@ -81,10 +109,10 @@ map <Leader>d :NERDTreeToggle<CR>
 map <Leader>u :GundoToggle<CR>
 
 " Control+hjkl moves focus to that window
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 let g:gundo_right = 1
 let g:gundo_close_on_revert = 1

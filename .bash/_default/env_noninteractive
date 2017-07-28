@@ -1,4 +1,5 @@
 # vim: ft=sh
 
-export EDITOR="$( which vim )"
+export EDITOR="${HOME}/bin/EDITOR"
+export VISUAL="${HOME}/bin/VISUAL"
 export HISTFILE="${HOME}/tmp/bash_history"
