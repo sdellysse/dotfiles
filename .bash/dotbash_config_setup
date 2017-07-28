@@ -12,7 +12,7 @@ if [ -z "${DOTBASH_config}" ]; then
     else
         DOTBASH_os="$( "${HOME}/bin/os" )"
 
-        if [ -d "${HOME}/.bash/_os_${DOTBASH_os}" ]; then
+        if [ -d "${HOME}/.bash/os.${DOTBASH_os}" ]; then
             DOTBASH_config="os.${DOTBASH_os}"
         else
             DOTBASH_config="_default"

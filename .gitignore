@@ -1,4 +1,5 @@
 /*
+
 !/.bash_login
 !/.bash_logout
 !/.bash_profile
@@ -13,6 +14,12 @@
 
 !/.vimrc
 !/.gvimrc
+
+!/.config
+/.config/*
+!/.config/awesome
+/.config/awesome/*
+!/.config/awesome/rc.lua
 
 !/.ssh
 /.ssh/*

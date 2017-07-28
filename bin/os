@@ -8,6 +8,8 @@ elif echo "$UNAME_S" | grep -q "Linux"; then
     echo "linux"
 elif echo "$UNAME_S" | grep -q 'SunUNAME_S'; then
     echo "solaris"
+elif echo "$UNAME_S" | grep -q 'SunOS'; then
+    echo "sunos"
 elif echo "$UNAME_S" | grep -q 'CYGWIN'; then
     echo "windows"
 else
