@@ -1,0 +1,123 @@
+set $mod Mod4
+font pango:monospace 8
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# ThinkVantage Key
+bindsym XF86Launch1 exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+w kill
+
+# start dmenu (a program launcher)
+bindsym $mod+space       exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+shift+space exec dmenu_run
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+shift+h move left
+bindsym $mod+shift+j move down
+bindsym $mod+shift+k move up
+bindsym $mod+shift+l move right
+
+mode "Split: h=horizontal v=vertical" {
+  bindsym h split h ; mode "default"
+  bindsym v split v ; mode "default"
+
+  bindsym Escape mode "default"
+}
+
+# change container layout (stacked, tabbed, toggle split)
+mode "Layout: s=stacking t=tabbed e=toggle-split f=fullscreen" {
+  bindsym s layout stacking     ; mode "default"
+  bindsym t layout tabbed       ; mode "default"
+  bindsym e layout toggle split ; mode "default"
+  bindsym e fullscreen toggle   ; mode "default"
+
+  bindsym Escape mode "default"
+}
+bindsym $mod+t mode "Layout: s=stacking t=tabbed e=toggle-split f=fullscreen"
+
+mode "Float: l=toggle-float t=toggle-float-tile-focus" {
+  bindsym l floating toggle   ; mode "default"
+  bindsym t focus mode_toggle ; mode "default"
+
+  bindsym Escape mode "default"
+}
+bindsym $mod+f mode "Float: l=toggle-float t=toggle-float-tile-focus"
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+shift+1 move container to workspace 1
+bindsym $mod+shift+2 move container to workspace 2
+bindsym $mod+shift+3 move container to workspace 3
+bindsym $mod+shift+4 move container to workspace 4
+bindsym $mod+shift+5 move container to workspace 5
+bindsym $mod+shift+6 move container to workspace 6
+bindsym $mod+shift+7 move container to workspace 7
+bindsym $mod+shift+8 move container to workspace 8
+bindsym $mod+shift+9 move container to workspace 9
+bindsym $mod+shift+0 move container to workspace 10
+
+mode "q=quit r=restart l=reload" {
+  bindsym q exit
+  bindsym r restart
+  bindsym l reload
+
+  bindsym Escape mode "default"
+}
+bindsym $mod+q mode "q=quit r=restart l=reload"
+
+mode "Resize Width: minus=smaller plus=bigger h=resize-height" {
+  bindsym minus       resize shrink width 10 px or 10 ppt
+  bindsym equal       resize grow   width 10 px or 10 ppt
+  bindsym shift+equal resize grow   width 10 px or 10 ppt
+
+  bindsym h mode "Resize Height: minus=shorter plus=taller w=resize-width"
+
+  bindsym Escape mode "default"
+}
+
+mode "Resize Height: minus=shorter plus=taller w=resize-width" {
+  bindsym minux resize shrink height 10 px or 10 ppt
+  bindsym plus  resize grow   height 10 px or 10 ppt
+  bindsym equal resize grow   height 10 px or 10 ppt
+
+  bindsym w mode "Resize Width: minus=smaller plus=bigger h=resize-height" 
+
+  bindsym Escape mode "default"
+}
+
+mode "Resize: w=width h=height" {
+  bindsym w mode "Resize Width: minus=smaller plus=bigger h=resize-height"
+  bindsym h mode "Resize Height: minus=shorter plus=taller w=resize-width"
+
+  bindsym Escape mode "default"
+}
+bindsym $mod+r mode "Resize: w=width h=height"
+
+bar {
+        status_command i3status
+        position top
+}
