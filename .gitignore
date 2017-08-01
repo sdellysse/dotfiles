@@ -27,6 +27,9 @@
 /.config/i3status/*
 !/.config/i3status/config
 
+!/.config/bspwm
+!/.config/sxhkd
+
 !/.ssh
 /.ssh/*
 !/.ssh/config.dist
