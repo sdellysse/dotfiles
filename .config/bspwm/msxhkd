@@ -1,0 +1,39 @@
+#!/bin/bash
+
+msxhkd_start(){
+  local working_dir="/tmp/msxhkd-$USER"
+  local mode_dir="$1"
+
+  rm -rf "$working_dir" && mkdir -p "$working_dir"
+
+  cp "$mode_dir/default.sxhkdrc" "$working_dir/sxhkdrc"
+  echo -n "default" > "$working_dir/current_mode"
+  echo -n "$mode_dir" > "$working_dir/mode_dir"
+
+  exec sxhkd -c "$working_dir/sxhkdrc"
+}
+
+msxhkd_set_mode(){
+  local working_dir="/tmp/msxhkd-$USER"
+  local mode_name="$1"
+
+  local mode_dir="$( cat "$working_dir/mode_dir" )"
+
+  cat "$mode_dir/$mode_name.sxhkdrc" > "$working_dir/sxhkdrc"
+  echo -n "$mode_name" > "$working_dir/current_mode"
+  pkill -USR1 -x sxhkd
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  set -euo pipefail
+
+  case "$1" in
+    "start")
+      msxhkd_start "$2"
+    ;;
+
+    "set-mode")
+      msxhkd_set_mode "$2"
+    ;;
+  esac
+fi

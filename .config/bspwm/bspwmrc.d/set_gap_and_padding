@@ -1,7 +1,6 @@
 #!/bin/sh
-set -euo pipefail
 
-set_gap(){
+set_gap_and_padding(){
   local GAP_PX="$1"
 
   local DEFAULT_PANEL_SIZE=24
@@ -45,22 +44,30 @@ set_gap(){
   bspc config right_padding  "$( expr "$L_PANEL_PX" - "$GAP_PX" )"
 }
 
-if [ "$#" = "2" ]; then
-  DIRECTION="$1"
-  AMOUNT="$2"
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  set -euo pipefail
+  CURRENT_GAP="$( bspc config window_gap )"
 
-  CURRENT="$( bspc config window_gap )"
+  if [ "$#" = "2" ]; then
+    DIRECTION="$1"
+    AMOUNT="$2"
 
-  set_gap "$( expr "$CURRENT" "$DIRECTION" "$AMOUNT" )"
-  exit
+    set_gap_and_padding "$( expr "$CURRENT_GAP" "$DIRECTION" "$AMOUNT" )"
+    exit
+  fi
+
+  if [ "$#" = "1" ]; then
+    SIZE="$1"
+
+    set_gap_and_padding "$SIZE"
+    exit
+  fi
+
+  if [ "$#" = "0" ]; then
+    set_gap_and_padding "$CURRENT_GAP"
+    exit
+  fi
+
+  echo "Bad arguments"
+  exit 1
 fi
-
-if [ "$#" = "1" ]; then
-  SIZE="$1"
-
-  set_gap "$SIZE"
-  exit
-fi
-
-echo "Bad arguments"
-exit 1

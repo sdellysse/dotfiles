@@ -1,0 +1,173 @@
+########################
+## CLOSE WINDOW BEGIN ##
+
+# ask
+super + w
+  bspc node -c
+
+# tell
+super + shift + w
+  bspc node -k
+
+## CLOSE WINDOW END   ##
+########################
+
+
+
+###################################
+## APPLICATION LAUNCH KEYS BEGIN ##
+
+super + Return
+  mate-terminal
+
+Print
+  deepin-screenshot
+
+super + space
+  dmenu_run
+
+## APPLICATION LAUNCH KEYS END   ##
+###################################
+
+
+
+########################
+## CHANGE FOCUS BEGIN ##
+
+super + h
+  bspc node -f west
+super + j
+  bspc node -f south
+super + k
+  bspc node -f north
+super + l
+  bspc node -f east
+
+super + Tab
+  bspc node -f next.local
+super + shift + Tab
+  bspc node -f prev.local
+
+## CHANGE FOCUS END   ##
+########################
+
+
+
+##########################
+## MOVE SELECTION BEGIN ##
+
+super + shift + h
+  bspc node -s west
+super + shift + j
+  bspc node -s south
+super + shift + k
+  bspc node -s north
+super + shift + l
+  bspc node -s east
+
+## MOVE SELECTION END   ##
+##########################
+
+
+
+################################
+## CHANGE DESKTOP FOCUS BEGIN ##
+super + 1
+  bspc desktop -f '^1'
+super + 2
+  bspc desktop -f '^2'
+super + 3
+  bspc desktop -f '^3'
+super + 4
+  bspc desktop -f '^4'
+super + 5
+  bspc desktop -f '^5'
+super + 6
+  bspc desktop -f '^6'
+super + 7
+  bspc desktop -f '^7'
+super + 8
+  bspc desktop -f '^8'
+super + 9
+  bspc desktop -f '^9'
+super + 0
+  bspc desktop -f '^10'
+
+super + bracketleft
+  bspc desktop -f prev.local
+super + bracketright
+  bspc desktop -f next.local
+
+## CHANGE DESKTOP FOCUS END   ##
+################################
+
+
+
+###########################
+## SEND TO DESKTOP BEGIN ##
+
+super + shift + 1
+  bspc node -d '^1'
+super + shift + 2
+  bspc node -d '^2'
+super + shift + 3
+  bspc node -d '^3'
+super + shift + 4
+  bspc node -d '^4'
+super + shift + 5
+  bspc node -d '^5'
+super + shift + 6
+  bspc node -d '^6'
+super + shift + 7
+  bspc node -d '^7'
+super + shift + 8
+  bspc node -d '^8'
+super + shift + 9
+  bspc node -d '^9'
+super + shift + 0
+  bspc node -d '^10'
+
+super + shift + bracketleft
+  bspc node -d prev.local
+super + shift + bracketright
+  bspc node -d next.local
+
+## SEND TO DESKTOP END   ##
+###########################
+
+
+
+###############################
+## PRESELECT DIRECTION BEGIN ##
+
+super + ctrl + h
+  bspc node -p west
+super + ctrl + j
+  bspc node -p south
+super + ctrl + k
+  bspc node -p north
+super + ctrl + l
+  bspc node -p east
+
+super + ctrl + u
+  bspc node -p cancel
+
+super + ctrl + p
+  bspc node -n last.!automatic
+
+## PRESELECT DIRECTION END   ##
+###############################
+
+
+# Modes
+super + r
+  msxhkd set-mode resize
+
+super + q
+  msxhkd set-mode wm_upkeep
+
+super + m
+  msxhkd set-mode change_window_mode
+
+super + p
+  ~/.config/bspwm/bspwmrc.d/set_border large && msxhkd set-mode navigate_tree

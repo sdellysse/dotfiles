@@ -2,17 +2,16 @@
 set -euo pipefail
 
 __DIR__="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "$__DIR__/bspwmrc.d/set_gap_and_padding"
+source "$__DIR__/bspwmrc.d/set_border"
 
-rm -f "$__DIR__/fifo.sxhkd"
-mkfifo "$__DIR__/fifo.sxhkd"
-sxhkd -c "$__DIR__/sxhkdrc" -s "$__DIR__/fifo.sxhkd" &
+msxhkd start "$__DIR__/msxhkd.d" &
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 
-bspc config border_width 2
-
-"$__DIR__/set-gap.sh" 12
+set_border regular
+set_gap_and_padding 12
 
 bspc config split_ratio          0.52
 

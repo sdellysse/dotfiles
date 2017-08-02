@@ -1,0 +1,14 @@
+t
+  bspc node -t tiled
+
+f
+  bspc node -t floating
+
+p
+  bspc node -t pseudo_tiled
+
+f
+  bspc node -t fullscreen
+
+Escape
+  msxhkd set-mode default

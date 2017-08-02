@@ -1,0 +1,25 @@
+# Shift = extend
+# Alt   = contract
+
+shift + h
+  bspc node -z left -20 0
+alt + h
+  bspc node -z left 20 0
+
+shift + j
+  bspc node -z bottom 0 20
+alt + j
+  bspc node -z top 0 20
+
+shift + k
+  bspc node -z top 0 -20
+alt + k
+  bspc node -z bottom 0 -20
+
+shift + l
+  bspc node -z right 20 0
+alt + l
+  bspc node -z right -20 0
+
+Escape
+  msxhkd set-mode default
