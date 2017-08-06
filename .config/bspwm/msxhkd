@@ -5,6 +5,7 @@ msxhkd_start(){
   local mode_dir="$1"
 
   rm -rf "$working_dir" && mkdir -p "$working_dir"
+  mkfifo --mode=0600 "$working_dir/fifo"
 
   cp "$mode_dir/default.sxhkdrc" "$working_dir/sxhkdrc"
   echo -n "default" > "$working_dir/current_mode"
@@ -22,6 +23,7 @@ msxhkd_set_mode(){
   cat "$mode_dir/$mode_name.sxhkdrc" > "$working_dir/sxhkdrc"
   echo -n "$mode_name" > "$working_dir/current_mode"
   pkill -USR1 -x sxhkd
+  echo "{\"action\": \"MODE-SET\", \"name\": \"$mode_name\"}" > "$working_dir/fifo"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then

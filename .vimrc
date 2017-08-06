@@ -42,6 +42,7 @@ Plug 'rust-lang/rust.vim',            { 'for': 'rust' }
 Plug 'derekwyatt/vim-sbt',            { 'for': 'sbt' }
 Plug 'derekwyatt/vim-scala',          { 'for': 'scala' }
 Plug 'stephpy/vim-yaml',              { 'for': 'yaml' }
+Plug 'GutenYe/json5.vim',             { 'for': 'json5' }
 
 " Themes
 Plug 'tpope/vim-vividchalk'
