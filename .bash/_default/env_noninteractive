@@ -1,5 +1,9 @@
 # vim: ft=sh
 
-export EDITOR="${HOME}/bin/EDITOR"
-export VISUAL="${HOME}/bin/VISUAL"
+export EDITOR="vim"
+if [ "$( "${HOME}/bin/os" )" = "macos" ]; then
+  export VISUAL="mvim -f"
+else
+  export VISUAL="gvim -f"
+fi
 export HISTFILE="${HOME}/tmp/bash_history"
