@@ -43,6 +43,12 @@ super + k
 super + l
   bspc node -f east
 
+super + comma
+  bspc monitor -f next
+
+super + period
+  bspc monitor -f prev
+
 super + Tab
   bspc node -f next.local
 super + shift + Tab
@@ -64,6 +70,12 @@ super + shift + k
   bspc node -s north
 super + shift + l
   bspc node -s east
+
+super + Comma
+  bspc window -m next
+
+super + Period
+  bspc window -m prev
 
 ## MOVE SELECTION END   ##
 ##########################

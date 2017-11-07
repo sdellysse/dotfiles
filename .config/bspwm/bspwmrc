@@ -8,6 +8,8 @@ source "$__DIR__/bspwmrc.d/set_border"
 msxhkd start "$__DIR__/msxhkd.d" &
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+#bspc monitor LVDS-1 -d 1 2 3 4 5 6 7 8 9 0
+#bspc monitor DP-2   -d 1 2 3 4 5 6 7 8 9 0
 
 
 set_border regular
@@ -15,5 +17,5 @@ set_gap_and_padding 12
 
 bspc config split_ratio          0.52
 
-bspc rule --add Pithos desktop="^0" state=floating
-bspc rule --add "Messenger for Desktop" desktop="^0" state=floating
+bspc rule --add Pithos desktop="^0"
+bspc rule --add "Messenger for Desktop" desktop="^0"
