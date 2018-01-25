@@ -1,3 +1,0 @@
-# vim: ft=sh
-
-export PATH="${HOME}/bin:${HOME}/opt/bin:${HOME}/opt/homebrew/bin:$PATH"

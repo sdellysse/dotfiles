@@ -17,31 +17,31 @@ endif
 " Set up vim plugins
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'jamessan/vim-gnupg'
-Plug 'vim-airline/vim-airline'
-Plug 'airblade/vim-gitgutter'
+"Plug 'jamessan/vim-gnupg'
+"Plug 'vim-airline/vim-airline'
+"Plug 'airblade/vim-gitgutter'
 Plug 'sjl/gundo.vim'
 Plug 'matchit.zip'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'godlygeek/tabular'
+Plug 'editorconfig/editorconfig-vim'
 
 " Syntax
-Plug 'pearofducks/ansible-vim'
+"Plug 'pearofducks/ansible-vim'
 Plug 'JulesWang/css.vim',             { 'for': 'css' }
-Plug 'elixir-lang/vim-elixir',        { 'for': 'elixir' }
-Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
-Plug 'fatih/vim-go',                  { 'for': 'go' }
-Plug 'neovimhaskell/haskell-vim',     { 'for': 'haskell' }
+"Plug 'elixir-lang/vim-elixir',        { 'for': 'elixir' }
+"Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
+"Plug 'fatih/vim-go',                  { 'for': 'go' }
+"Plug 'neovimhaskell/haskell-vim',     { 'for': 'haskell' }
 Plug 'pangloss/vim-javascript',       { 'for': 'javascript' }
 Plug 'mxw/vim-jsx',                   { 'for': 'javascript' }
-Plug 'tbastos/vim-lua',               { 'for': 'lua' }
-Plug 'chr4/nginx.vim'
-Plug 'vim-perl/vim-perl',             { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
-Plug 'StanAngeloff/php.vim',          { 'for': 'php' }
-Plug 'rust-lang/rust.vim',            { 'for': 'rust' }
-Plug 'derekwyatt/vim-sbt',            { 'for': 'sbt' }
-Plug 'derekwyatt/vim-scala',          { 'for': 'scala' }
-Plug 'stephpy/vim-yaml',              { 'for': 'yaml' }
+"Plug 'tbastos/vim-lua',               { 'for': 'lua' }
+"Plug 'chr4/nginx.vim'
+"Plug 'StanAngeloff/php.vim',          { 'for': 'php' }
+"Plug 'rust-lang/rust.vim',            { 'for': 'rust' }
+"Plug 'derekwyatt/vim-sbt',            { 'for': 'sbt' }
+"Plug 'derekwyatt/vim-scala',          { 'for': 'scala' }
+"Plug 'stephpy/vim-yaml',              { 'for': 'yaml' }
 Plug 'GutenYe/json5.vim',             { 'for': 'json5' }
 
 " Themes
@@ -70,10 +70,10 @@ set showtabline=2         "always show tab bar
 set visualbell
 set updatetime=250
 
-" Indentation settings, gave up on editorconfig
-set expandtab
 set shiftwidth=2
 set tabstop=2
+
+set directory=$HOME/tmp/vim//
 
 " Don't complain if the colorscheme isn't set
 silent! colorscheme vividchalk

@@ -1,7 +1,0 @@
-# vim: ft=sh
-source "${HOME}/.bash/_default/env_noninteractive"
-
-# For C2S dev
-export JAVA_HOME="$( /usr/libexec/java_home )"
-export SBT_OPTS="$SBT_OPTS -Dsbt.jse.engineType=Node -XX:+TieredCompilation"
-export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=128m -XX:+TieredCompilation"
