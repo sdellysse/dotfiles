@@ -1,7 +1,0 @@
-#!/bin/sh
-
-if [ "$( "${HOME}/bin/os" )" = 'windows' -o "$( "${HOME}/bin/os" )" = "sunos" ]; then
-    hostname
-else
-    hostname -s
-fi

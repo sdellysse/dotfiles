@@ -1,5 +1,3 @@
-# vim: ft=sh
-
 alias edit="emacs"
 alias editb="emacs -n"
 alias ls="/bin/ls --color=always -F"

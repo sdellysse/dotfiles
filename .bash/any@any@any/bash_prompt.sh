@@ -1,16 +1,3 @@
-# vim: ft=sh
-
-export MYSQL_PS1="[\\d]> "
-
-shopt -s cdspell    # When changing directory small typos can be ignored by bash
-shopt -s histappend # Make bash append rather than overwrite the history on disk
-shopt -s cmdhist
-
-if ((BASH_VERSINFO[0] >= 4)); then
-    shopt -s autocd     # chdir just by typing dirname
-    shopt -s dirspell   # fix spelling during tab completion
-fi
-
 PROMPT_COLOR_BLUE="\[\e[34;1m\]"
 PROMPT_COLOR_BOLD="\[\e[1m\]"
 PROMPT_COLOR_GREEN="\[\e[32;1m\]"
@@ -70,4 +57,3 @@ function PROMPT_function() {
     PS2="${PROMPT_COLOR_BOLD}>${PROMPT_COLOR_RESET} "
 }
 PROMPT_COMMAND=PROMPT_function
-

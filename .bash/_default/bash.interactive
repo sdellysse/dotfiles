@@ -1,7 +1,0 @@
-# vim: ft=sh
-
-export BASH_ENV="${HOME}/.bash/_default/bash.noninteractive"
-source "${BASH_ENV}"
-
-source "${HOME}/.bash/_default/aliases"
-source "${HOME}/.bash/_default/env_interactive"

@@ -1,5 +1,6 @@
 #!/bin/sh
 
+mkdir -p "${HOME}/tmp/vim"
 rm -rf "${HOME}/.vim"
 mkdir "${HOME}/.vim"
 touch "${HOME}/.vim/1- DO NOT EDIT THIS DIRECTORY"

@@ -1,3 +1,1 @@
-# vim: ft=sh
-
 export PATH="${HOME}/opt/bin:${HOME}/bin:$PATH"

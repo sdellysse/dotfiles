@@ -1,5 +1,0 @@
-# vim: filetype=sh
-
-# UTF-8 is not working on omnios as of 2017-01-19 (I think)
-#source "${HOME}/.bash/_default/locale"
-source "${HOME}/.bash/_default/env_noninteractive"

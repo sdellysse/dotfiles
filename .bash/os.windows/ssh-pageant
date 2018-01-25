@@ -1,7 +1,0 @@
-# vim: filetype=sh
-
-if [ -x /usr/bin/ssh-pageant ]; then
-    eval $( /usr/bin/ssh-pageant -qra /tmp/.ssh-pageant )
-else
-    echo "Install ssh-pageant"
-fi

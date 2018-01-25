@@ -1,4 +1,4 @@
 # vim: filetype=sh
+source "${HOME}/.bash/init.sh"
 
-source "${HOME}/.bash/dotbash_config_setup"
-source "${HOME}/.bash/${DOTBASH_config}/bash.login"
+source "$( "${HOME}/.bash/resolve.sh" "_login.sh" )"
