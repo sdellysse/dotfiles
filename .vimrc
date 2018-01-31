@@ -47,6 +47,9 @@ Plug 'GutenYe/json5.vim',             { 'for': 'json5' }
 " Themes
 Plug 'tpope/vim-vividchalk'
 
+Plug 'hoffstein/vim-tsql'
+Plug 'vim-scripts/dbext.vim'
+
 call plug#end()
 
 let mapleader=" "
@@ -123,3 +126,9 @@ autocmd BufReadPost *
 \ if line("'\"") > 0 && line ("'\"") <= line("$") |
 \   exe "normal! g'\"" |
 \ endif
+
+let g:dbext_default_SQLSRV_bin = 'sqlcmd'
+let g:dbext_default_SQLSRV_cmd_options = ''
+
+silent! source $HOME/.vimrc.local
+
