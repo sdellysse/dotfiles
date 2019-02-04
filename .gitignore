@@ -1,13 +1,6 @@
 /*
 
-!/.bash_login
-!/.bash_logout
-!/.bash_profile
-!/.bashrc
-!/.editorconfig
-!/.emacs
 !/.gitignore
-!/.bash
 
 !/.vimrc
 !/.gvimrc
@@ -26,6 +19,7 @@
 
 !/.config/bspwm
 !/.config/sxhkd
+!/.config/bash
 
 !/.ssh
 /.ssh/*

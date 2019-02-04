@@ -1,3 +1,38 @@
+export BASH_ENV="${HOME}/.config/bash/noninteractive.sh"
+source "$BASH_ENV"
+
+eval $( ~/OneDrive/opt/weasel-pageant-1.1/weasel-pageant -rq )
+
+#alias edit="emacs"
+#alias editb="emacs -n"
+alias ls="command wsl_ls --color --quoting-style=literal --group-directories-first --human-readable --indicator-style=slash"
+alias l="ls -l"
+alias la="l -a"
+#alias s='screen -RD'
+#alias -- -='cd -'
+#alias vssh='vagrant ssh'
+
+# http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
+man() {
+    env                            \
+    LESS_TERMCAP_md=$'\e[1;36m'    \
+    LESS_TERMCAP_me=$'\e[0m'       \
+    LESS_TERMCAP_se=$'\e[0m'       \
+    LESS_TERMCAP_so=$'\e[1;40;92m' \
+    LESS_TERMCAP_ue=$'\e[0m'       \
+    LESS_TERMCAP_us=$'\e[1;32m'    \
+    man "$@"
+}
+
+shopt -s cdspell    # When changing directory small typos can be ignored by bash
+shopt -s histappend # Make bash append rather than overwrite the history on disk
+shopt -s cmdhist
+
+if ((BASH_VERSINFO[0] >= 4)); then
+    shopt -s autocd     # chdir just by typing dirname
+    shopt -s dirspell   # fix spelling during tab completion
+fi
+
 PROMPT_COLOR_BLUE="\[\e[34;1m\]"
 PROMPT_COLOR_BOLD="\[\e[1m\]"
 PROMPT_COLOR_GREEN="\[\e[32;1m\]"
@@ -57,3 +92,10 @@ function PROMPT_function() {
     PS2="${PROMPT_COLOR_BOLD}>${PROMPT_COLOR_RESET} "
 }
 PROMPT_COMMAND=PROMPT_function
+
+export MYSQL_PS1="[\\d]> "
+
+which thefuck > /dev/null 2>&1
+if [ "$?" == "0" ]; then
+	eval $( thefuck --alias )
+fi

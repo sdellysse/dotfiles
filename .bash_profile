@@ -1,1 +1,1 @@
-source "$HOME/.bash/interactive.sh"
+source "$HOME/.config/bash/interactive.sh"
