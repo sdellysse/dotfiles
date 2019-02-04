@@ -7,9 +7,6 @@
 !/.editorconfig
 !/.emacs
 !/.gitignore
-!/.minttyrc
-!/.tmux.conf
-!/.screenrc
 !/.bash
 
 !/.vimrc
