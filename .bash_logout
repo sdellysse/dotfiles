@@ -1,1 +1,1 @@
-source "$HOME/.config/bash/logout.sh"
+/mnt/c/Users/sdell/.config/bash/logout.sh

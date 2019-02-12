@@ -1,8 +1,8 @@
 export LANG="en_US.utf-8"
-export PATH="${HOME}/opt/bin:${HOME}/bin:$PATH"
+export PATH="${HOME}/bin:$PATH"
 export EDITOR="vim"
 export HISTFILE="${HOME}/tmp/bash_history"
-export DOCKER_HOST=tcp://localhost:2375
+export LESSHISTFILE="${HOME}/tmp/less_history"
 
 # Defer initialization of nvm until nvm, node or a node-dependent command is
 # run. Ensure this block is only run once if .bashrc gets sourced multiple times

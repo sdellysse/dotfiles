@@ -1,1 +1,1 @@
-source "$HOME/.config/bash/interactive.sh"
+/mnt/c/Users/sdell/.config/bash/interactive.sh

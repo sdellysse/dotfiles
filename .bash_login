@@ -1,1 +1,1 @@
-# INTENTIONALLY BLANK, SEE ~/.bash_profile
+/mnt/c/Users/sdell/.config/bash/intentionally_blank.sh
