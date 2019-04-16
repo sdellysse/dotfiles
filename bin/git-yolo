@@ -1,3 +1,0 @@
-#!/bin/sh
-
-git commit -m '凸ಠ益ಠ)凸' -a && git push -f
