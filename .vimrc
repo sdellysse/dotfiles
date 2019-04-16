@@ -1,15 +1,10 @@
 " Tell Vim as early as possible not to try to emulate vi
 set nocompatible
 
-" Make win32-vim look for files in the same places as the regular versions
-if has('win32') || has('win64')
-	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-	set viminfo+=n$HOME/.vim/info
-endif
 
 " Vim needs posix
 if &shell =~# 'fish$'
-	set shell=bash
+  set shell=bash
 endif
 
 " Automatically installs the plugin manager if it doesn't exist, and installs
@@ -82,13 +77,11 @@ set updatetime=250
 set shiftwidth=2
 set tabstop=2
 
-set directory=$HOME/tmp/vim//
-
 " Don't complain if the colorscheme isn't set
 silent! colorscheme vividchalk
 
 "calls sudo and asks for password if necessary
-cmap w!! %!sudo tee > /dev/null %
+cmap w!! %!sudo tee > /dev/null '%'
 
 " Smash JK in insert mode to revert to normal mode
 inoremap jk <ESC>
