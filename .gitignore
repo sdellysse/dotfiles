@@ -2,9 +2,6 @@
 
 !/.gitignore
 
-!/.vimrc
-!/.gvimrc
-
 !/.config
 /.config/*
 !/.config/awesome
@@ -16,10 +13,14 @@
 !/.config/i3status
 /.config/i3status/*
 !/.config/i3status/config
+!/.config/vim
+/.config/vim/*
+!/.config/vim/rc
 
 !/.config/bspwm
 !/.config/sxhkd
 !/.config/bash
+!/.config/fish
 
 !/.ssh
 /.ssh/*

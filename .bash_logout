@@ -1,1 +1,1 @@
-/mnt/c/Users/sdell/.config/bash/logout.sh
+/mnt/c/Users/sdell/.config/bash/intentionally_blank.sh

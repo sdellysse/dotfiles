@@ -1,0 +1,2 @@
+# Defined in - @ line 1
+alias ls="\"$LS_BINPATH\" --color --quoting-style=literal --group-directories-first --human-readable --indicator-style=slash"

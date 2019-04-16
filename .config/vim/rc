@@ -3,8 +3,13 @@ set nocompatible
 
 " Make win32-vim look for files in the same places as the regular versions
 if has('win32') || has('win64')
-    set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-    set viminfo+=n$HOME/.vim/info
+	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+	set viminfo+=n$HOME/.vim/info
+endif
+
+" Vim needs posix
+if &shell =~# 'fish$'
+	set shell=bash
 endif
 
 " Automatically installs the plugin manager if it doesn't exist, and installs
@@ -43,6 +48,7 @@ Plug 'mxw/vim-jsx',                   { 'for': 'javascript' }
 "Plug 'derekwyatt/vim-scala',          { 'for': 'scala' }
 "Plug 'stephpy/vim-yaml',              { 'for': 'yaml' }
 Plug 'GutenYe/json5.vim',             { 'for': 'json5' }
+Plug 'dag/vim-fish',                  { 'for': 'fish' }
 
 " Themes
 Plug 'tpope/vim-vividchalk'
