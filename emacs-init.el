@@ -7,13 +7,17 @@
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 
-;;;; No GUI
-;;(menu-bar-mode -1)
-;;(tool-bar-mode -1)
+;; No GUI
+(menu-bar-mode -1)
+(tool-bar-mode -1)
 
 ;;;; Tell emacs to use this file for customizations, leave this one alone
-(setq custom-file "~/.config/dotfiles/emacs/custom.el")
+(setq custom-file "~/.config/dotfiles/emacs-custom.el")
 (load custom-file)
+
+;;;; Put backup files in /tmp
+(setq backup-directory-alist         `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
 ;;;; nowrap
 (set-default 'truncate-lines t)
@@ -63,16 +67,11 @@
                         (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
                         (evil-mode)))))
 
-;;(use-package evil-magit
-;;  :ensure t
-;;  :after (evil magit))
+(use-package evil-collection
+  :ensure t
+  :after (evil magit)
 
-;;(use-package evil-collection
-;;  :ensure t
-;;  :after evil
-;;
-;;  :config (progn
-;;            (evil-collection-init)))
+  :config (evil-collection-init 'magit))
 
 (use-package evil-escape
   :ensure t
@@ -96,10 +95,10 @@
 ;;	    (define-key helm-find-files-map (kbd "C-k")   'helm-find-files-up-one-level)
 ;;
 ;;	    (helm-mode)))
-	    
 
-;;(use-package magit
-;;  :ensure t)
+
+(use-package magit
+  :ensure t)
 
 (use-package neotree
   :ensure t
