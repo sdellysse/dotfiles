@@ -1,3 +1,1 @@
-function ll
-	ls -l
-end
+alias ll="ls -l"

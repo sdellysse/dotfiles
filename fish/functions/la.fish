@@ -1,3 +1,1 @@
-function la
-	ls -la
-end
+alias la="ls -la"

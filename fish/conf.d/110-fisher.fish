@@ -1,18 +1,18 @@
-set -q fisher_path; or set -g fisher_path "$XDG_CACHE_HOME/fisher_workdir"
+set -q fisher_path; or set -g fisher_path $XDG_CACHE_HOME/fisher_workdir
 if not [ -d "$fisher_path" ]
-		mkdir -p "$fisher_path"
+		mkdir -p $fisher_path
 end
 
-# Keep fisher config inside this dir; fisher expects it in $fisher_path
+# Keep fisher config inside main fish config dir; fisher expects it in $fisher_path
 if not [ -L "$fisher_path/fishfile" ]
-	ln -sf "$XDG_CONFIG_HOME/fish/fisher" "$fisher_path/fishfile"
+	ln -sf $XDG_CONFIG_HOME/fish/fisher $fisher_path/fishfile
 end
 
 # Download fisher into its working directory if needed
 if not [ -e "$fisher_path/fish/actual_fisher.fish" ]
-		curl https://git.io/fisher --create-dirs -sLo "$fisher_path/actual_fisher.fish"
+		curl https://git.io/fisher --create-dirs -sLo $fisher_path/actual_fisher.fish
 end
-builtin source "$fisher_path/actual_fisher.fish"
+builtin source $fisher_path/actual_fisher.fish
 
 
 # add the fisher workdir to the paths and pull in fisher configs
