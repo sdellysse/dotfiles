@@ -5,6 +5,7 @@ set d (dirname (readlink -f (status --current-filename)))
 ln -svf $d/intentionally_blank.sh $HOME/.bash_login
 ln -svf $d/intentionally_blank.sh $HOME/.bash_logout
 ln -svf $d/bash_noninteractive.sh $HOME/.bash_profile
+ln -svf $d/editorconfig           $HOME/.editorconfig
 ln -svf $d/emacs.el               $HOME/.emacs
 ln -svf $d/intentionally_blank.sh $HOME/.profile
 ln -svf $d/vimrc                  $HOME/.vimrc

@@ -1,1 +1,0 @@
-alias vim="emacs -nw"

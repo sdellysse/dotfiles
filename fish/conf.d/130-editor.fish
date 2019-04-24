@@ -1,1 +1,1 @@
-set --export --global EDITOR vim
+set --export --global EDITOR "emacs -nw"
