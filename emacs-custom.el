@@ -19,7 +19,7 @@
 	(ztree ztree-diff))))
  '(package-selected-packages
    (quote
-    (magit helm evil-magit evil-leader editorconfig evil-escape neotree evil-collection evil use-package))))
+    (esup el-get req-package magit helm evil-magit evil-leader editorconfig evil-escape neotree evil-collection evil use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

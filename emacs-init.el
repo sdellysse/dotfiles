@@ -3,6 +3,22 @@
 (set-locale-environment "en_US.UTF-8")
 (prefer-coding-system 'utf-8-unix)
 
+;;;; Tell emacs to use this file for customizations, leave this one alone
+(setq custom-file "~/.config/dotfiles/emacs-custom.el")
+(load custom-file)
+
+;;;; Package Repos
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
+;;;; Pull in use-package if we don't already have it, launch our package config
+(eval-when-compile
+  (unless (package-installed-p 'use-package)
+    (package-refresh-contents)
+    (package-install 'use-package))
+  (require 'use-package))
+
 ;;;; Clean screen startup
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
@@ -10,10 +26,6 @@
 ;; No GUI
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-
-;;;; Tell emacs to use this file for customizations, leave this one alone
-(setq custom-file "~/.config/dotfiles/emacs-custom.el")
-(load custom-file)
 
 ;;;; Put backup files in /tmp
 (setq backup-directory-alist         `((".*" . ,temporary-file-directory)))
@@ -25,16 +37,6 @@
 ;;;; (y or n) instead of (yes or no)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;;;; Package Repos
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
-
-;;;; Pull in use-package if we don't already have it, launch our package config
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(require 'use-package)
 
 ;;;; PACKAGES:::
 ;;;; ============
