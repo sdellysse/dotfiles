@@ -3,6 +3,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("9d9b2cf2ced850aad6eda58e247cf66da2912e0722302aaa4894274e0ea9f894" "ec0c9d1715065a594af90e19e596e737c7b2cdaa18eb1b71baf7ef696adbefb0" "31772cd378fd8267d6427cec2d02d599eee14a1b60e9b2b894dd5487bd30978e" default)))
  '(evil-collection-mode-list
    (quote
     (ag alchemist anaconda-mode arc-mode bookmark
@@ -19,7 +22,7 @@
 	(ztree ztree-diff))))
  '(package-selected-packages
    (quote
-    (esup el-get req-package magit helm evil-magit evil-leader editorconfig evil-escape neotree evil-collection evil use-package))))
+    (vimrc-mode fish-mode fish color-theme-solarized-dark color-theme-modern color-theme esup el-get req-package magit helm evil-magit evil-leader editorconfig evil-escape neotree evil-collection evil use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

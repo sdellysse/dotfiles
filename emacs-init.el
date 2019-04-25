@@ -1,7 +1,7 @@
 ;;;; UTF-8 ALL THE THINGS
 (set-language-environment "UTF-8")
-(set-locale-environment "en_US.UTF-8")
-(prefer-coding-system 'utf-8-unix)
+(set-locale-environment   "en_US.UTF-8")
+(prefer-coding-system     'utf-8-unix)
 
 ;;;; Tell emacs to use this file for customizations, leave this one alone
 (setq custom-file "~/.config/dotfiles/emacs-custom.el")
@@ -12,7 +12,7 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
-;;;; Pull in use-package if we don't already have it, launch our package config
+;;;; Pull in use-package if we don't already have it
 (eval-when-compile
   (unless (package-installed-p 'use-package)
     (package-refresh-contents)
@@ -27,6 +27,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
+
 ;;;; Put backup files in /tmp
 (setq backup-directory-alist         `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
@@ -40,6 +41,11 @@
 
 ;;;; PACKAGES:::
 ;;;; ============
+(use-package alect-themes
+  :ensure t
+
+  :init (progn
+          (load-theme 'alect-dark t)))
 (use-package editorconfig
   :ensure t
 
@@ -84,6 +90,9 @@
             (setq-default evil-escape-unordered-key-sequence t)
             (evil-escape-mode)))
 
+(use-package fish-mode
+  :ensure t)
+
 ;;(use-package helm
 ;;  :ensure t
 ;;
@@ -125,3 +134,9 @@
 					   (define-key evil-normal-state-local-map (kbd "s")   'neotree-enter-vertical-split)
 					   (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-quick-look)
 					   (define-key evil-normal-state-local-map (kbd "u")   'neotree-select-up-node)))))
+
+(use-package vimrc-mode
+  :ensure t
+
+  :init (progn
+          (add-to-list 'auto-mode-alist '("\\.vim\\(rc\\)?\\'" . vimrc-mode))))
