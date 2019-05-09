@@ -41,7 +41,6 @@
 ;;;; PACKAGES:::
 ;;;; ============
 (use-package alect-themes
-  :defer t
 
   :config
   (load-theme 'alect-dark t))
