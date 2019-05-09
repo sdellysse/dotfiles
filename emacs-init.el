@@ -53,19 +53,20 @@
   (editorconfig-mode))
 
 (use-package evil
+  :demand t
+  
   :init
   (setq evil-want-integration t)
   (setq evil-want-keybinding  nil)
 
-  :config
-  ;; Don't call (evil-mode) here, it'll be called later by evil-leader
-  (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
-  (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
-  (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
-  (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right))
+  :bind (:map evil-normal-state-map
+	      ("C-h" . evil-window-left)
+              ("C-j" . evil-window-down)
+              ("C-k" . evil-window-up)
+              ("C-l" . evil-window-right)))
 
 (use-package evil-escape
-  :after (evil)
+  :after (evil evil-leader)
 
   :config 
   (setq-default evil-escape-key-sequence "jk")
