@@ -12,12 +12,13 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
-;;;; Pull in use-package if we don't already have it
+;;;; Pull in (use-package) if we don't already have it
 (eval-when-compile
   (unless (package-installed-p 'use-package)
     (package-refresh-contents)
     (package-install 'use-package))
-  (require 'use-package))
+  (require 'use-package)
+  (setq use-package-always-ensure t))
 
 ;;;; Clean screen startup
 (setq inhibit-startup-message t)
@@ -40,22 +41,18 @@
 ;;;; PACKAGES:::
 ;;;; ============
 (use-package alect-themes
-  :ensure t
   :defer t
 
   :config
   (load-theme 'alect-dark t))
 
 (use-package editorconfig
-  :ensure t
   :defer t
 
   :config
   (editorconfig-mode))
 
 (use-package evil
-  :ensure t
-
   :init
   (setq evil-want-integration t)
   (setq evil-want-keybinding  nil)
@@ -64,8 +61,6 @@
   (progn
     ;;nest for now, gotta call (evil-mode) after loading evil-leader
     (use-package evil-leader
-      :ensure t
-
       :init
       (global-evil-leader-mode)
 
@@ -81,14 +76,12 @@
 	(evil-mode)))))
 
 (use-package evil-collection
-  :ensure t
   :after (evil magit)
 
   :config
   (evil-collection-init 'magit))
 
 (use-package evil-escape
-  :ensure t
   :after evil
 
   :config 
@@ -97,17 +90,13 @@
   (evil-escape-mode))
 
 (use-package fish-mode
-  :ensure t
-
   :mode "\\.fish\\'"
   :interpreter "fish")
 
 (use-package magit
-  :ensure t
   :defer t)
 
 (use-package neotree
-  :ensure t
   :after (evil evil-leader)
 
   :config 
@@ -130,6 +119,4 @@
 				 (define-key evil-normal-state-local-map (kbd "u")   'neotree-select-up-node))))
 
 (use-package vimrc-mode
-  :ensure t
-
   :mode "\\.vim\\(rc\\)?\\'")
