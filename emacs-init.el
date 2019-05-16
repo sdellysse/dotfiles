@@ -46,14 +46,13 @@
   (load-theme 'alect-dark t))
 
 (use-package editorconfig
-  :defer t
 
   :config
   (editorconfig-mode))
 
 (use-package evil
   :demand t
-  
+
   :init
   (setq evil-want-integration t)
   (setq evil-want-keybinding  nil)
@@ -67,7 +66,7 @@
 (use-package evil-escape
   :after (evil evil-leader)
 
-  :config 
+  :config
   (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-unordered-key-sequence t)
   (evil-escape-mode))
@@ -88,6 +87,9 @@
   :mode        "\\.fish\\'"
   :interpreter "fish")
 
+(use-package protobuf-mode
+  :mode "\\.proto\\'")
+
 (use-package neotree
   :after    (evil evil-leader)
   :commands neotree-toggle
@@ -96,8 +98,8 @@
   :init
   (evil-leader/set-key "d" 'neotree-toggle)
 
-  :config 
-  (defun evil-neotree-hook () 
+  :config
+  (defun evil-neotree-hook ()
     (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)
     (define-key evil-normal-state-local-map (kbd "I")   'neotree-hidden-file-toggle)
     (define-key evil-normal-state-local-map (kbd "i")   'neotree-enter-horizontal-split)

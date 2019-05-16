@@ -22,7 +22,7 @@
 	(ztree ztree-diff))))
  '(package-selected-packages
    (quote
-    (sudo-edit vimrc-mode fish-mode fish color-theme-solarized-dark color-theme-modern color-theme esup el-get req-package magit helm evil-magit evil-leader editorconfig evil-escape neotree evil-collection evil use-package))))
+    (protobuf-mode sudo-edit vimrc-mode fish-mode fish color-theme-solarized-dark color-theme-modern color-theme esup el-get req-package magit helm evil-magit evil-leader editorconfig evil-escape neotree evil-collection evil use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
