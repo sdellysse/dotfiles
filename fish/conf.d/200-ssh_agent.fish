@@ -1,1 +1,1 @@
-eval ( ~/Nextcloud/software/weasel-pageant-1.1/weasel-pageant -rq -S fish )
+eval ( ~/g/software/weasel-pageant-1.1/weasel-pageant -rq -S fish )

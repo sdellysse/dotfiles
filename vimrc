@@ -54,6 +54,7 @@ Plug 'vim-scripts/dbext.vim'
 call plug#end()
 
 let mapleader=" "
+let g:NERDTreeBookmarksFile = '$HOME/.vim/nerdtreebookmarks'
 let g:NERDTreeDirArrows = 0
 let g:jsx_ext_required = 0
 set colorcolumn=81
@@ -130,4 +131,3 @@ let g:dbext_default_SQLSRV_bin = 'sqlcmd'
 let g:dbext_default_SQLSRV_cmd_options = ''
 
 silent! source $HOME/.vimrc.local
-

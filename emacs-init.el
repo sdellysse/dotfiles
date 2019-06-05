@@ -45,6 +45,27 @@
   :config
   (load-theme 'alect-dark t))
 
+(use-package company
+
+  :hook (prog-mode . global-company-mode)
+
+  :config
+  (setq company-idle-delay 0.2)
+  (setq company-tooltip-limit 10)
+  (setq company-minimum-prefix-length 1)
+  (setq company-tooltip-align-annotations t)
+
+  :bind (("C-<tab>" . company-complete-common)
+
+          :map company-mode-map
+          ([remap completion-at-point] . company-complete-common)
+          ([remap complete-symbol]     . company-complete-common)
+
+          :map company-active-map
+          ("C-n" . company-select-next)
+          ("C-p" . company-select-previous)
+          ("C-d" . company-show-doc-buffer)))
+
 (use-package editorconfig
 
   :config
@@ -87,6 +108,9 @@
   :mode        "\\.fish\\'"
   :interpreter "fish")
 
+(use-package flycheck
+  :hook (prog-mode . global-flycheck-mode))
+
 (use-package protobuf-mode
   :mode "\\.proto\\'")
 
@@ -114,5 +138,21 @@
   (setq neo-theme 'nerd)
   (evil-set-initial-state 'neotree-mode 'normal))
 
+(use-package psc-ide
+  :mode "\\.purs\\'"
+
+  :config
+  (setq psc-ide-use-npm-bin t)
+  (add-hook 'purescript-mode-hook (lambda ()
+                                    (psc-ide-mode)
+                                    (company-mode)
+                                    (flycheck-mode)
+                                    (turn-on-purescript-indentation))))
+
 (use-package vimrc-mode
   :mode "\\.vim\\(rc\\)?\\'")
+
+(use-package yaml-mode
+  :mode "\\.ya?ml\\'")
+
+(provide 'emacs-init)
