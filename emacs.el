@@ -4,8 +4,8 @@
 (prefer-coding-system     'utf-8-unix)
 
 ;;;; Tell emacs to use this file for customizations, leave this one alone
-(setq custom-file "~/.config/dotfiles/emacs-custom.el")
-(load custom-file)
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file 'noerror)
 
 ;;;; Clean screen startup
 (setq inhibit-startup-message t)
@@ -40,14 +40,8 @@
 
 ;;;; PACKAGES:::
 ;;;; ============
-(use-package alect-themes
-
-  :config
-  (load-theme 'alect-dark t))
-
 (use-package company
-
-  :hook (prog-mode . global-company-mode)
+  :hook (prog-mode . company-mode)
 
   :config
   (setq company-idle-delay 0.2)
@@ -55,7 +49,7 @@
   (setq company-minimum-prefix-length 1)
   (setq company-tooltip-align-annotations t)
 
-  :bind (("C-<tab>" . company-complete-common)
+  :bind (("C-<SPC>" . company-complete)
 
           :map company-mode-map
           ([remap completion-at-point] . company-complete-common)
@@ -67,7 +61,6 @@
           ("C-d" . company-show-doc-buffer)))
 
 (use-package editorconfig
-
   :config
   (editorconfig-mode))
 
@@ -79,10 +72,10 @@
   (setq evil-want-keybinding  nil)
 
   :bind (:map evil-normal-state-map
-	      ("C-h" . evil-window-left)
-              ("C-j" . evil-window-down)
-              ("C-k" . evil-window-up)
-              ("C-l" . evil-window-right)))
+          ("C-h" . evil-window-left)
+          ("C-j" . evil-window-down)
+          ("C-k" . evil-window-up)
+          ("C-l" . evil-window-right)))
 
 (use-package evil-escape
   :after (evil evil-leader)
@@ -111,6 +104,10 @@
 (use-package flycheck
   :hook (prog-mode . global-flycheck-mode))
 
+(use-package gruvbox-theme
+  :config
+  (load-theme 'gruvbox-dark-hard t))
+
 (use-package protobuf-mode
   :mode "\\.proto\\'")
 
@@ -138,16 +135,6 @@
   (setq neo-theme 'nerd)
   (evil-set-initial-state 'neotree-mode 'normal))
 
-(use-package psc-ide
-  :mode "\\.purs\\'"
-
-  :config
-  (setq psc-ide-use-npm-bin t)
-  (add-hook 'purescript-mode-hook (lambda ()
-                                    (psc-ide-mode)
-                                    (company-mode)
-                                    (flycheck-mode)
-                                    (turn-on-purescript-indentation))))
 
 (use-package vimrc-mode
   :mode "\\.vim\\(rc\\)?\\'")

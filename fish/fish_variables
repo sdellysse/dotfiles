@@ -9,8 +9,6 @@ SETUVAR AGNOSTER_ICON_SCM_STAGED:\u2026
 SETUVAR AGNOSTER_ICON_SCM_STASHED:\x7e
 SETUVAR AGNOSTER_SEGMENT_RSEPARATOR:\ue0b2\x1e\ue0b3
 SETUVAR AGNOSTER_SEGMENT_SEPARATOR:\ue0b0\x1e\x20\ue0b1\x20
-SETUVAR --export DOCKER_HOST:tcp\x3a//localhost\x3a2375
-SETUVAR --path LS_BINPATH:/usr/local/bin/wsl_ls
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
@@ -42,5 +40,5 @@ SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:\x1d
+SETUVAR fish_user_paths:/mnt/c/Users/sdell/\x2eyarn/bin
 SETUVAR pisces_pairs:\x28\x2c\x29\x1e\x5b\x2c\x5d\x1e\x7b\x2c\x7d\x1e\x22\x2c\x22\x1e\x27\x2c\x27
