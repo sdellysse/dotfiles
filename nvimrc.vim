@@ -1,29 +1,54 @@
+" Persistent undos are nice, toss them into XDG cache
+	set undodir=$XDG_CACHE_HOME/nvim/undo
+
 " Overridden by editorconfig if current file is child of $HOME
 	set shiftwidth=2
 	set tabstop=2
 
-" Install vim-plug if not exists
-	if !filereadable(stdpath('data') . '/site/autoload/plug.vim')
-		silent execute '!curl -fLo ' . stdpath('data') . '/site/autoload/plug.vim' . '  --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"'
-		autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-	endif
+" Set leader for plugins that clobber bindings
+	let mapleader="\\"
 
 " Declare Plugins
 	call plug#begin(stdpath('data') .'/vim-plug')
-		Plug 'tpope/vim-sensible'
-		Plug 'editorconfig/editorconfig-vim'
+		Plug 'qpkorr/vim-bufkill'
+			" Adds :BD, :BW, etc; kills buffer without killing split
 
-		Plug 'tpope/vim-eunuch'
+		Plug 'ap/vim-buftabline'
+			" Replaces tabline with bufferline
+
+		Plug 'svermeulen/vim-cutlass'
+			" Vim's delete keys no longer cut, just delete
+
+		Plug 'editorconfig/editorconfig-vim'
+			" enable `.editorconfig` file support
+
 		Plug 'dag/vim-fish'
+			" Syntax plugin for fish shell
+
 		Plug 'morhetz/gruvbox'
+			" color scheme
+
+		Plug 'pangloss/vim-javascript'
+			"syntax plugin for javascript lang
+
 		Plug 'scrooloose/nerdtree'
+			" File Drawer
+
 		Plug 'Xuyuanp/nerdtree-git-plugin'
+			" Add git support to NERDTree file drawer
+
+		Plug 'tpope/vim-sensible'
+			" 'more-sensible' vim base config
+
 		Plug 'mhinz/vim-signify'
-		Plug 'jreybert/vimagit'
+			" Show per-file changes from VCS in the gutter
+
+		Plug 'christoomey/vim-tmux-navigator'
+			" integrate vim and tmux pane switching
 	call plug#end()
 
 " When editing a file, always jump to the last cursor position
-	augroup LastCursorPositionGroup
+	augroup BEGIN_RememberCursorPosition
 		autocmd!
 
 		autocmd BufReadPost *
@@ -32,49 +57,53 @@
 		\ endif
 	augroup END
 
-
-" Editor options
-	let mapleader="\\"
+" Visual Options
 	silent! colorscheme gruvbox
-	set nowrap
-	set pastetoggle=<F12>
-	set number
 	set termguicolors
+	set number
+
+" Commandline Mappings
 	cnoremap w!! execute 'silent! write !sudo tee "%" > /dev/null <bar> edit!'
+		" saves the current file via sudo
 
-" Exit from insert mode
-	inoremap jk    <ESC>
-	inoremap kj    <ESC>
+" Text wrapping
+	set nowrap
+  augroup BEGIN_Wrap
+		autocmd!
+		autocmd FileType text     setlocal wrap
+		autocmd FileType markdown setlocal wrap
+	augroup END
 
-" Window movement
-	nnoremap <C-h> <C-w>h
-	nnoremap <C-j> <C-w>j
-	nnoremap <C-k> <C-w>k
-	nnoremap <C-l> <C-w>l
+" Escape from everthing with SMASH(jk)
+	inoremap jk <ESC>
+	inoremap kj <ESC>
+
+" Disable keys
+	nnoremap s <NOP>
+		" trying to retrain s->cl
+
+" Buffers instead of tabs
+  set hidden
+	nnoremap <SPACE>bw :BW<CR>
+	nnoremap <SPACE>bn :bnext<CR>
+	nnoremap <SPACE>bp :bprev<CR>
 
 " NERDTree Options
-	nnoremap <SPACE>d :NERDTreeFocus<CR>
-	nnoremap <SPACE>D :NERDTreeClose<CR>
-	nnoremap <SPACE>f :NERDTreeFind<CR>
-	nnoremap <SPACE>g :NERDTreeVCS<CR>
+	nnoremap <SPACE>ni :NERDTreeFocus<CR>
+	nnoremap <SPACE>nx :NERDTreeClose<CR>
+	nnoremap <SPACE>nf :NERDTreeFind<CR>
+	nnoremap <SPACE>nv :NERDTreeVCS<CR>
 	let g:NERDTreeBookmarksFile    = stdpath('data') . '/nerdtreebookmarks'
-	let g:NERDTreeIgnore           = [ 'NTUSER.DAT.*', 'ntuser.dat.*', 'ntuser.ini', 'desktop.ini' ]
+	let g:NERDTreeIgnore           = [ 'NTUSER.DAT.*', 'ntuser.dat.*', 'ntuser.ini', 'ntuser.pol', 'desktop.ini' ]
 	let g:NERDTreeAutoDeleteBuffer = 1
 	let g:NERDTreeMinimalUI        = 1
 	let g:NERDTreeDirArrows        = 1
 
-" vimagit
-	nnoremap <SPACE>m :Magit<CR>
+" Cutlass settings
+	xnoremap x d
+	xnoremap X D
+		" `x` and `X` now actually cut, the other operations just delete
 
-" Terminal
-	nnoremap <SPACE>to :edit term://$SHELL<CR>
-	nnoremap <SPACE>tt :tabedit term://$SHELL<CR>
-	nnoremap <SPACE>ti :split term://$SHELL<CR>
-	nnoremap <SPACE>ts :vsplit term://$SHELL<CR>
-	tnoremap <ESC><ESC> <C-\><C-n>
-	tnoremap jk <C-\><C-n>
-	tnoremap kj <C-\><C-n>
-	augroup TerminalGroup
-		autocmd!
-		autocmd TermOpen * setlocal nonumber
-	augroup END
+" Clipboard
+	set clipboard=unnamedplus
+		" sets the default clipboard to the system clipboard
