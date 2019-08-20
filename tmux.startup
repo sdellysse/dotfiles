@@ -49,3 +49,5 @@
 
 # vim-tmux-nav takes over C-l, restore it with C-a C-l
 	bind C-l send-keys 'C-l'
+
+# vim: ft=tmux

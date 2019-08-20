@@ -4,6 +4,10 @@ Leave user's `$SHELL` set to `bash`; `fish`, to it's advantage, isn't fully
 POSIX compatible, so it can cause issues with certain utilities if set as the
 default shell. `bash` will automatically start `fish` as needed.
 
+Non-interactive startup is `bash.startup`
+
+Interactive startup is `fish.startup`
+
 Clone this repo to `~/.config/dotfiles` and run `~/.config/dotfiles/install.fish`.
 
 Notable things:

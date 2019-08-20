@@ -1,0 +1,32 @@
+# DO NOT set fish as your default shell, the headaches you get from tools
+# expecing $SHELL to be POSIX-compliant isn't worth it. Set it to bash, and the
+# bash_profile I've whipped up will launch fish in an interactive session, but
+# will leave non-interactive sessions in bash itself. Non-interactive variables
+# need to go in `~/.config/dotfiles/startup.bash`
+
+# Tell fisher where to live
+	set --global --export fisher_path $XDG_CACHE_HOME/fisher_workdir
+
+# Tell fish where to find fisher files and our dotfiles
+	set --global --export fish_function_path $XDG_CONFIG_HOME/dotfiles/fish.functions   $fisher_path/functions   $fish_function_path[2..-1]
+	set --global --export fish_complete_path $XDG_CONFIG_HOME/dotfiles/fish.completions $fisher_path/completions $fish_complete_path[2..-1]
+
+	builtin source $fisher_path/actual_fisher.fish
+
+# source any conf.d's in our dotfiles and also our fisher plugins
+	for file in $XDG_CONFIG_HOME/dotfiles/fish.conf.d/*.fish
+		builtin source $file 2> /dev/null
+	end
+	for file in $fisher_path/conf.d/*.fish
+		builtin source $file 2> /dev/null
+	end
+
+# setup interactive envvars here
+	set --export --global EDITOR       "/usr/bin/nvim"
+	set --export --global LESSHISTFILE "$XDG_CACHE_DIR/lesshistfile"
+	set --export --global LS_BINPATH   "/usr/local/bin/wsl_ls"
+
+# suppress greeting
+	set fish_greeting
+
+# vim: ft=fish

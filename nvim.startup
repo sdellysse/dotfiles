@@ -107,3 +107,5 @@
 " Clipboard
 	set clipboard=unnamedplus
 		" sets the default clipboard to the system clipboard
+
+" vim: ft=vim
