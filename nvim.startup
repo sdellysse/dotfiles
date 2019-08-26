@@ -71,7 +71,7 @@
 
 " Text wrapping
 	set nowrap
-  augroup BEGIN_Wrap
+	augroup BEGIN_Wrap
 		autocmd!
 		autocmd FileType text     setlocal wrap
 		autocmd FileType markdown setlocal wrap
