@@ -8,12 +8,15 @@
 	[ "$XDG_CACHE_HOME"  = "" ] && export XDG_CACHE_HOME="${HOME}/.cache"
 		# Make sure XDG is set up correctly, but don't clobber existing values
 
-	export HISTFILE="${HOME}/.cache/histfile"
-		# Keep your $HOME clean
-
 	export BASH_ENV="${HOME}/.config/dotfiles/startup.bash"
 		# Make sure we set where bash should look for its non-interactive env
 		# settings
+
+	export HISTFILE="${HOME}/.cache/histfile"
+		# Keep your $HOME clean
+
+	export DOCKER_HOST=tcp://localhost:2375
+		# connect to W10 DockerForDesktop
 
 # Launch SSH Agent Connector if needed
 	if false; then

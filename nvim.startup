@@ -22,6 +22,9 @@
 		Plug 'editorconfig/editorconfig-vim'
 			" enable `.editorconfig` file support
 
+		Plug 'elixir-editors/vim-elixir'
+			" Syntax plugin for elixir
+
 		Plug 'dag/vim-fish'
 			" Syntax plugin for fish shell
 
