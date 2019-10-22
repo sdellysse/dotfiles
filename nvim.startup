@@ -10,14 +10,11 @@
 
 " Declare Plugins
 	call plug#begin(stdpath('data') .'/vim-plug')
-		Plug 'qpkorr/vim-bufkill'
-			" Adds :BD, :BW, etc; kills buffer without killing split
-
-		Plug 'ap/vim-buftabline'
-			" Replaces tabline with bufferline
-
 		Plug 'svermeulen/vim-cutlass'
 			" Vim's delete keys no longer cut, just delete
+
+		Plug 'zhou13/vim-easyescape'
+			" Quicker timeouts for `jk` and `kj` in INSERT mode
 
 		Plug 'editorconfig/editorconfig-vim'
 			" enable `.editorconfig` file support
@@ -31,6 +28,9 @@
 		Plug 'morhetz/gruvbox'
 			" color scheme
 
+		Plug 'neovimhaskell/haskell-vim'
+			" Haskell syntax support
+
 		Plug 'pangloss/vim-javascript'
 			"syntax plugin for javascript lang
 
@@ -40,11 +40,20 @@
 		Plug 'Xuyuanp/nerdtree-git-plugin'
 			" Add git support to NERDTree file drawer
 
+		Plug 'raichoo/purescript-vim'
+			" Syntax plugin for purescript
+
 		Plug 'tpope/vim-sensible'
 			" 'more-sensible' vim base config
 
 		Plug 'mhinz/vim-signify'
 			" Show per-file changes from VCS in the gutter
+
+		Plug 'evanleck/vim-svelte'
+			" syntax plugin for svelte3
+
+		Plug 'leafgarland/typescript-vim'
+			" Typescript syntax
 
 		Plug 'christoomey/vim-tmux-navigator'
 			" integrate vim and tmux pane switching
@@ -73,23 +82,20 @@
 	set nowrap
 	augroup BEGIN_Wrap
 		autocmd!
-		autocmd FileType text     setlocal wrap
-		autocmd FileType markdown setlocal wrap
+		autocmd FileType text     setlocal wrap | setlocal linebreak
+		autocmd FileType markdown setlocal wrap | setlocal linebreak
 	augroup END
 
+" Make Shift-Tab work
+	inoremap <S-Tab> <C-d>
+
 " Escape from everthing with SMASH(jk)
-	inoremap jk <ESC>
-	inoremap kj <ESC>
+	let g:easyescape_chars = { "j": 1, "k": 1 }
+	let g:easyescape_timeout = 100
 
 " Disable keys
 	nnoremap s <NOP>
 		" trying to retrain s->cl
-
-" Buffers instead of tabs
-  set hidden
-	nnoremap <SPACE>bw :BW<CR>
-	nnoremap <SPACE>bn :bnext<CR>
-	nnoremap <SPACE>bp :bprev<CR>
 
 " NERDTree Options
 	nnoremap <SPACE>ni :NERDTreeFocus<CR>

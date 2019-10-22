@@ -18,6 +18,13 @@
 	export DOCKER_HOST=tcp://localhost:2375
 		# connect to W10 DockerForDesktop
 
+#	export NPM_PACKAGES="${HOME}/.cache/npm-packages-root"
+#		# `npm install -g` goes here
+#
+## Setup PATHs
+#	export PATH="${NPM_PACKAGES}/bin:${PATH}"
+#	export MANPATH="${NPM_PACKAGES}/share/man:${MANPATH:-$( manpath )}"
+
 # Launch SSH Agent Connector if needed
 	if false; then
 		echo -n

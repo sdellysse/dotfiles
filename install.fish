@@ -40,5 +40,5 @@ echo "Installing tmux plugins: done"
 
 echo "Installing vim plugins: starting..."
 	curl https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim --fail --location --create-dirs --output $XDG_DATA_HOME/nvim/site/autoload/plug.vim
-	nvim +PlugInstall! +qall
+	nvim +PlugInstall! +UpdateRemotePlugins +qall
 echo "Installing vim plugins: done"

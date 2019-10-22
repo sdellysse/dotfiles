@@ -12,5 +12,11 @@ insert_final_newline = true
 [*.el]
 indent_style = space
 
+[*.hs]
+indent_style = space
+
+[*.purs]
+indent_style = space
+
 [*.yaml]
 indent_style = space
