@@ -1,3 +1,3 @@
-function ls
-	$LS_BINPATH --color --quoting-style=literal --group-directories-first --human-readable --indicator-style=slash $argv
+function ls --description 'List contents of directory'
+    command ls -FG $argv
 end

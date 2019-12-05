@@ -1,8 +1,16 @@
-# DO NOT set fish as your default shell, the headaches you get from tools
-# expecing $SHELL to be POSIX-compliant isn't worth it. Set it to bash, and the
-# bash_profile I've whipped up will launch fish in an interactive session, but
-# will leave non-interactive sessions in bash itself. Non-interactive variables
-# need to go in `~/.config/dotfiles/startup.bash`
+# ensure sane umask
+	umask 0002
+
+# Ensure XDG is set up
+	set --query $XDG_CONFIG_HOME && set --global --export XDG_CONFIG_HOME $HOME/.config
+	set --query $XDG_DATA_HOME   && set --global --export XDG_DATA_HOME   $HOME/.local/share
+	set --query $XDG_CACHE_HOME  && set --global --export XDG_CACHE_HOME  $HOME/.cache
+
+# Make sure we set where bash should look for its non-interactive env settings
+	set --global --export BASH_ENV $HOME/.config/dotfiles/startup.bash
+
+# Keep your $HOME clean
+	set --global --export HISTFILE $HOME/.cache/histfile
 
 # Tell fisher where to live
 	set --global --export fisher_path $XDG_CACHE_HOME/fisher_workdir

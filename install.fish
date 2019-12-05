@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
 echo "removing previously generated files and directories: starting..."
 	rm -rfv $HOME/.cache/fisher_workdir
@@ -7,12 +7,12 @@ echo "removing previously generated files and directories: starting..."
 echo "removing previously generated files and directories: done"
 
 echo "creating skeleton directory structure: starting..."
-	mkdir --verbose --parents $HOME/.cache/fisher_workdir
-	mkdir --verbose --parents $HOME/.cache/nvim/undo
-	mkdir --verbose --parents $HOME/.config/fish
-	mkdir --verbose --parents $HOME/.config/nvim
-	mkdir --verbose --parents $HOME/.local/share/nvim
-	mkdir --verbose --parents $HOME/.tmux/plugins
+	mkdir -p $HOME/.cache/fisher_workdir
+	mkdir -p $HOME/.cache/nvim/undo
+	mkdir -p $HOME/.config/fish
+	mkdir -p $HOME/.config/nvim
+	mkdir -p $HOME/.local/share/nvim
+	mkdir -p $HOME/.tmux/plugins
 echo "creating skeleton directory structure: done"
 
 echo "symlinking files: staritng..."
@@ -39,6 +39,6 @@ echo "Installing tmux plugins: starting..."
 echo "Installing tmux plugins: done"
 
 echo "Installing vim plugins: starting..."
-	curl https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim --fail --location --create-dirs --output $XDG_DATA_HOME/nvim/site/autoload/plug.vim
+	curl https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim --fail --location --create-dirs --output $HOME/.local/share/nvim/site/autoload/plug.vim
 	nvim +PlugInstall! +UpdateRemotePlugins +qall
 echo "Installing vim plugins: done"

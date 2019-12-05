@@ -1,3 +1,3 @@
 function cat
-	bat $argv
+	command bat $argv
 end

@@ -1,5 +1,6 @@
 Install `fish`, `neovim`, and `tmux`.
 
+// NOTE THIS ISNT TRUE ANYMORE NEED TO FIX
 Leave user's `$SHELL` set to `bash`; `fish`, to it's advantage, isn't fully
 POSIX compatible, so it can cause issues with certain utilities if set as the
 default shell. `bash` will automatically start `fish` as needed.
