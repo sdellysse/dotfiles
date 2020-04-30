@@ -1,3 +1,5 @@
+# ~/.config/dotfiles/editorconfig
+
 root = true
 
 [*]
@@ -20,3 +22,5 @@ indent_style = space
 
 [*.yaml]
 indent_style = space
+
+# vim: set ft=editorconfig
